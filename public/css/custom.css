@@ -1,0 +1,28 @@
+:root {
+  --black: #2D2926;/*PANTONE Black C*/
+  --orange: #FE5000; /*PANTONE Orange 021 C*/
+  --white: #FCFAF1; /*PANTONE P 1-1 U*/
+}
+
+.black{
+    color: var(--black)
+}
+.bg-black{
+    background-color: var(--black)
+}
+.orange{
+    color: var(--orange)
+}
+.bg-orange{
+    background-color: var(--orange)
+}
+.white{
+    color: var(--white)
+}
+.bg-white{
+    background-color: var(--white)
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: transparent;
+}
