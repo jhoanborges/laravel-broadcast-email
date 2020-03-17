@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    font: normal 75% Arial, Helvetica, sans-serif;
+    font: Helvetica, sans-serif;
 }
 
 canvas {
@@ -61,4 +61,64 @@ canvas {
 
 .count-particles {
     border-radius: 0 0 3px 3px;
+}
+
+.main-header .main-menu ul li>a {
+    color: #fff;
+}
+
+section .skew-white, footer .skew-white {
+    background: #fdfcff;
+    box-shadow: 0 0 20px rgba(66,50,93,0.4), 0 0 100px rgba(66,50,93,0.25);
+}
+
+.skew-white{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    transform: skewY(-10deg);
+}
+
+.main-img{
+z-index: 2;
+    position: relative;
+}
+
+section .skew-gradient, footer .skew-gradient {
+    background: linear-gradient(135deg, #00c6e4 0%, #993cc9 100%);
+}
+
+section .skew-white, section .skew-gradient, section .skew-gray, footer .skew-white, footer .skew-gradient, footer .skew-gray {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    transform: skewY(-10deg);
+}
+
+.hero-wrap .slider-text h1 {
+    font-size: 50px;
+}
+
+.ftco-section {
+    padding-top: 6em;
+    padding-right: 0px;
+    padding-bottom: 1em;
+    padding-left: 0px;
+}
+
+.services{
+    color: #fff;
+    background: #6927ff;
+}
+.heading{
+    color: #fff
+}
+
+.card-title .heading{
+    font-size: 20px;
+    font-weight: 700;
 }

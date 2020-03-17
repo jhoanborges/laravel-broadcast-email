@@ -1,479 +1,564 @@
 @extends('welcome')
 @section('content')
-<main>
 
-
-    <!-- slider_area_start -->
-    <div class="slider_area">
-
-        <div class="single_slider  d-flex align-items-center slider_bg_1">
-            <!-- particles.js container --> <div id="particles-js"></div>
-
-            <div class="container">
-
-                <div class="row align-items-center">
-                    <div class="col-xl-7 col-md-6">
-                        <div class="slider_text ">
-                            <h3 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".1s" >Cotiza tu envío</h3>
-                            {{--<p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s">Get more users to promote your app with this template</p>--}}
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="origen" class="text-white">Origen</label>
-                                        <input type="email" class="form-control" id="origen" aria-describedby="emailHelp" placeholder="Ciudad o Código Postal">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="desino" class="text-white">Destino</label>
-                                        <input type="email" class="form-control" id="desino" aria-describedby="emailHelp" placeholder="Ciudad o Código Postal">
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                            <span for="inlineRadio1" class="text-white">DOCUMENTO</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-
-                                        <label class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                            <span for="inlineRadio2" class="text-white">PAQUETE</span>
-                                        </label>
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-
-                            <div class="video_service_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s">
-                                <a href="#" class="boxed-btn3">Cotizar mi envío</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-md-6">
-                        <div class="phone_thumb wow fadeInDown" data-wow-duration="1.1s" data-wow-delay=".2s">
-                            <img src="{{ asset('landing/img/ilstrator/phone.png') }}" alt="">
-                        </div>
-                    </div>
-
-
-                </div>
+<div class="hero-wrap js-fullheight mt-5">
+  <div class="overlay"></div>
+  <div class="container-fluid px-0">
+    <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+        <img class="one-third js-fullheight align-self-end order-md-last img-fluid" src="landing/images/undraw_pair_programming_njlp.svg" alt="">
+        <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+            <div class="text mt-5">
+                <span class="subheading">E-HOP</span>
+                <h1 class="mb-3"><span>El software que soluciona toda tu logística</span></h1>
+                <p>Sincroniza todos tus productos y guías desde cualquier lugar, maneja tu inventario en línea, almacénalo, envíalo y rastréalo, ofreciendo una incomparable experiencia de compra a tus clientes.</p>
+                <p><a href="#" class="btn btn-primary px-4 py-3">¡Cotíza ya!</a></p>
             </div>
         </div>
     </div>
-    <!-- slider_area_end -->
-
-    <!-- Slider Area Start-->
-    <div class="slider-area ">
-        <div class="slider-active">
-            <div class="single-slider slider-height slider-padding sky-blue d-flex align-items-center">
-                <div class="container">
-                    <div class="row d-flex align-items-center">
-                        <div class="col-lg-6 col-md-9 ">
-                            <div class="hero__caption">
-                                <span data-animation="fadeInUp" data-delay=".4s">App Landing Page</span>
-                                <h1 data-animation="fadeInUp" data-delay=".6s">Get things done<br>with Appco</h1>
-                                <p data-animation="fadeInUp" data-delay=".8s">Dorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusm tempor incididunt ulabore et dolore magna aliqua.</p>
-                                <!-- Slider btn -->
-                                <div class="slider-btns">
-                                    <!-- Hero-btn -->
-                                    <a data-animation="fadeInLeft" data-delay="1.0s" href="industries.html" class="btn radius-btn">Download</a>
-                                    <!-- Video Btn -->
-                                    <a data-animation="fadeInRight" data-delay="1.0s" class="popup-video video-btn ani-btn" href="https://www.youtube.com/watch?v=1aP-TXUpNoU"><i class="fas fa-play"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="hero__img d-none d-lg-block f-right" data-animation="fadeInRight" data-delay="1s">
-                                <img src="{{ asset('landing/img/hero/hero_right.png')}}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+</div>
+</div>
+{{--}}
+<section class="ftco-domain">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-5 heading-white mb-4 mb-sm-4 mb-lg-0 ftco-animate">
+                <h2>Search Your Domain Name</h2>
+                <p>A small river named Duden flows by their place</p>
             </div>
-            <div class="single-slider slider-height slider-padding sky-blue d-flex align-items-center">
-                <div class="container">
-                    <div class="row d-flex align-items-center">
-                        <div class="col-lg-6 col-md-9 ">
-                            <div class="hero__caption">
-                                <span data-animation="fadeInUp" data-delay=".4s">App Landing Page</span>
-                                <h1 data-animation="fadeInUp" data-delay=".6s">Get things done<br>with Appco</h1>
-                                <p data-animation="fadeInUp" data-delay=".8s">Dorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusm tempor incididunt ulabore et dolore magna aliqua.</p>
-                                <!-- Slider btn -->
-                                <div class="slider-btns">
-                                    <!-- Hero-btn -->
-                                    <a data-animation="fadeInLeft" data-delay="1.0s" href="industries.html" class="btn radius-btn">Download</a>
-                                    <!-- Video Btn -->
-                                    <a data-animation="fadeInRight" data-delay="1.0s" class="popup-video video-btn ani-btn" href="https://www.youtube.com/watch?v=1aP-TXUpNoU"><i class="fas fa-play"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="hero__img d-none d-lg-block f-right" data-animation="fadeInRight" data-delay="1s">
-                                <img src="{{ asset('landing/img/hero/hero_right.png')}}" alt="">
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-7 p-5 ftco-wrap ftco-animate">
+                <form action="#" class="domain-form d-flex mb-3">
+                  <div class="form-group domain-name">
+                    <input type="text" class="form-control name px-4" placeholder="Enter your domain name...">
                 </div>
+                <div class="form-group domain-select d-flex">
+                  <div class="select-wrap">
+                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                      <select name="" id="" class="form-control">
+                        <option value="">.com</option>
+                        <option value="">.net</option>
+                        <option value="">.biz</option>
+                        <option value="">.co</option>
+                        <option value="">.me</option>
+                    </select>
+                </div>
+                <input type="submit" class="search-domain btn btn-primary text-center" value="Search">
             </div>
-        </div>
+        </form>
+        <p class="domain-price mt-2">
+            <span><small>.com</small> $9.75</span>
+            <span><small>.net</small> $9.50</span>
+            <span><small>.biz</small> $8.95</span>
+            <span><small>.co</small> $7.80</span>
+            <span><small>.me</small> $7.95</span>
+        </p>
     </div>
-    <!-- Slider Area End -->
-    <!-- Best Features Start -->
-    <section class="best-features-area section-padd4">
-        <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-xl-8 col-lg-10">
-                    <!-- Section Tittle -->
-                    <div class="row">
-                        <div class="col-lg-10 col-md-10">
-                            <div class="section-tittle">
-                                <h2>Some of the best features Of Our App!</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Section caption -->
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-6">
-                            <div class="single-features mb-70">
-                                <div class="features-icon">
-                                    <span class="flaticon-support"></span>
-                                </div>
-                                <div class="features-caption">
-                                    <h3>Easy to Costomize</h3>
-                                    <p>Aorem psum olorsit amet ectetur adipiscing elit, sed dov.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6">
-                            <div class="single-features mb-70">
-                                <div class="features-icon">
-                                    <span class="flaticon-support"></span>
-                                </div>
-                                <div class="features-caption">
-                                    <h3>Extreme Security</h3>
-                                    <p>Aorem psum olorsit amet ectetur adipiscing elit, sed dov.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6">
-                            <div class="single-features mb-70">
-                                <div class="features-icon">
-                                    <span class="flaticon-support"></span>
-                                </div>
-                                <div class="features-caption">
-                                    <h3>Customer Support</h3>
-                                    <p>Aorem psum olorsit amet ectetur adipiscing elit, sed dov.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6">
-                            <div class="single-features mb-70">
-                                <div class="features-icon">
-                                    <span class="flaticon-support"></span>
-                                </div>
-                                <div class="features-caption">
-                                    <h3>Creative Design</h3>
-                                    <p>Aorem psum olorsit amet ectetur adipiscing elit, sed dov.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+</div>
+</div>
+</section>
+--}}
+<section class="ftco-section ftco-no-pt ftc-no-pb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 py-5">
+                <img src="{{ asset('img/store.svg') }}" class="img-fluid" alt="">
+                <div class="heading-section ftco-animate mt-5">
+                    <h2 class="mb-4">Nuestros servicios</h2>
+                    <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
                 </div>
             </div>
-        </div>
-        <!-- Shpe -->
-        <div class="features-shpae d-none d-lg-block">
-            <img src="{{ asset('landing/img/shape/best-features.png')}}" alt="">
-        </div>
-    </section>
-    <!-- Best Features End -->
-    <!-- Services Area Start -->
-    <section class="service-area sky-blue section-padding2">
-        <div class="container">
-            <!-- Section Tittle -->
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section-tittle text-center">
-                        <h2>How Can We HelpYour<br>with Appco!</h2>
-                    </div>
-                </div>
-            </div>
-            <!-- Section caption -->
-            <div class="row justify-content-center">
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="services-caption text-center mb-30">
-                        <div class="service-icon">
-                            <span class="flaticon-businessman"></span>
-                        </div>
-                        <div class="service-cap">
-                            <h4><a href="#">Easily Manage</a></h4>
-                            <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="services-caption active text-center mb-30">
-                        <div class="service-icon">
-                            <span class="flaticon-pay"></span>
-                        </div>
-                        <div class="service-cap">
-                            <h4><a href="#">Get Payments Easily</a></h4>
-                            <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="services-caption text-center mb-30">
-                        <div class="service-icon">
-                            <span class="flaticon-plane"></span>
-                        </div>
-                        <div class="service-cap">
-                            <h4><a href="#">Quick Messaging</a></h4>
-                            <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Services Area End -->
-    <!-- Applic App Start -->
-    <div class="applic-apps section-padding2">
-        <div class="container-fluid">
-            <div class="row">
-                <!-- slider Heading -->
-                <div class="col-xl-4 col-lg-4 col-md-8">
-                    <div class="single-cases-info mb-30">
-                        <h3>Applic Apps<br> Screenshot</h3>
-                        <p>Lorem ipsum dolor sit amet, consecadipiscing elit, sed do eiusmod tempor incididunt ut ore et dolore magna aliqua. Quis ipsum suspendisse gravida. Risus commodo viverra maecenasan lacus vel facilisis. </p>
-                    </div>
-                </div>
-                <!-- OwL -->
-                <div class="col-xl-8 col-lg-8 col-md-col-md-7">
-                    <div class="app-active owl-carousel">
-                        <div class="single-cases-img">
-                            <img src="{{ asset('landing/img/gallery/App1.png')}}" alt="">
-                        </div>
-                        <div class="single-cases-img">
-                            <img src="{{ asset('landing/img/gallery/App2.png')}}" alt="">
-                        </div>
-                        <div class="single-cases-img">
-                            <img src="{{ asset('landing/img/gallery/App3.png')}}" alt="">
-                        </div>
-                        <div class="single-cases-img">
-                            <img src="{{ asset('landing/img/gallery/App2.png')}}" alt="">
-                        </div>
-                        <div class="single-cases-img">
-                            <img src="{{ asset('landing/img/gallery/App1.png')}}" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Applic App End -->
-    <!-- Best Pricing Start -->
-    <section class="best-pricing pricing-padding" data-background="{{ asset('landing/img/gallery/best_pricingbg.jpg')}}">
-        <div class="container">
-            <!-- Section Tittle -->
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-6 col-md-8">
-                    <div class="section-tittle section-tittle2 text-center">
-                        <h2>Choose Your Very Best Pricing Plan.</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Best Pricing End -->
-    <!-- Pricing Card Start -->
-    <div class="pricing-card-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single-card text-center mb-30">
-                        <div class="card-top">
-                            <span>2 Years</span>
-                            <h4>$05 <span>/ month</span></h4>
-                        </div>
-                        <div class="card-bottom">
-                            <ul>
-                                <li>Increase traffic 50%</li>
-                                <li>E-mail support</li>
-                                <li>10 Free Optimization</li>
-                                <li>24/7  support</li>
-                            </ul>
-                            <a href="services.html" class="btn card-btn1">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single-card  text-center mb-30">
-                        <div class="card-top">
-                            <span>2 Years</span>
-                            <h4>$05 <span>/ month</span></h4>
-                        </div>
-                        <div class="card-bottom">
-                            <ul>
-                                <li>Increase traffic 50%</li>
-                                <li>E-mail support</li>
-                                <li>10 Free Optimization</li>
-                                <li>24/7  support</li>
-                            </ul>
-                            <a href="services.html" class="btn card-btn1">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single-card text-center mb-30">
-                        <div class="card-top">
-                            <span>2 Years</span>
-                            <h4>$05 <span>/ month</span></h4>
-                        </div>
-                        <div class="card-bottom">
-                            <ul>
-                                <li>Increase traffic 50%</li>
-                                <li>E-mail support</li>
-                                <li>10 Free Optimization</li>
-                                <li>24/7  support</li>
-                            </ul>
-                            <a href="services.html" class="btn card-btn1">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Pricing Card End -->
-    <!-- Our Customer Start -->
-    <div class="our-customer section-padd-top30">
-        <div class="container-fluid">
-            <div class="our-customer-wrapper">
-                <!-- Section Tittle -->
-                <div class="row d-flex justify-content-center">
-                    <div class="col-xl-8">
-                        <div class="section-tittle text-center">
-                            <h2>What Our Customers<br> Have to Say</h2>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-6 py-5">
                 <div class="row">
-                    <div class="col-12">
-                        <div class="customar-active dot-style d-flex dot-style">
-                            <div class="single-customer mb-100">
-                                <div class="what-img">
-                                    <img src="{{ asset('landing/img/shape/man1.png')}}" alt="">
-                                </div>
-                                <div class="what-cap">
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                    <p>Utenim ad minim veniam quisnostrud exercitation ullamcolabor nisiut aliquip ex ea commodo consequat duis aute irure dolor in represse.</p>
-                                </div>
+                    <div class="col-md-6 ftco-animate">
+                        <div class="media block-6 services border text-center">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-cloud-computing"></span>
                             </div>
-
-                            <div class="single-customer mb-100">
-                                <div class="what-img">
-                                    <img src="{{ asset('landing/img/shape/man2.png')}}" alt="">
-                                </div>
-                                <div class="what-cap">
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                    <p>Utenim ad minim veniam quisnostrud exercitation ullamcolabor nisiut aliquip ex ea commodo consequat duis aute irure dolor in represse.</p>
-                                </div>
+                            <div class="mt-3 media-body media-body-2">
+                                <h3 class="heading">CONSOLIDAMOS TUS PUNTOS DE VENTA</h3>
+                                <p>Controlá todas tus operaciones online desde un único lugar. No vas a tener que entrar a todas tus tiendas todos los días.</p>
                             </div>
-
-                            <div class="single-customer mb-100">
-                                <div class="what-img">
-                                    <img src="{{ asset('landing/img/shape/man3.png')}}" alt="">
-                                </div>
-                                <div class="what-cap">
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                    <p>Utenim ad minim veniam quisnostrud exercitation ullamcolabor nisiut aliquip ex ea commodo consequat duis aute irure dolor in represse.</p>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ftco-animate">
+                        <div class="media block-6 services border text-center">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-cloud"></span>
                             </div>
-
-                            <div class="single-customer mb-100">
-                                <div class="what-img">
-                                    <img src="{{ asset('landing/img/shape/man2.png')}}" alt="">
-                                </div>
-                                <div class="what-cap">
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                    <p>Utenim ad minim veniam quisnostrud exercitation ullamcolabor nisiut aliquip ex ea commodo consequat duis aute irure dolor in represse.</p>
-                                </div>
+                            <div class="mt-3 media-body media-body-2">
+                                <h3 class="heading">EMBALAMOS TUS PRODUCTOS</h3>
+                                <p>Armamos cada orden personalmente, cuidando embalar y empaquetar tus productos según su naturaleza y el destino al que se dirijan.</p>
                             </div>
-
+                        </div>
+                    </div>
+                    <div class="col-md-6 ftco-animate">
+                        <div class="media block-6 services border text-center">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-server"></span>
+                            </div>
+                            <div class="mt-3 media-body media-body-2">
+                                <h3 class="heading">ENTREGAMOS TUS VENTAS</h3>
+                                <p>En {{env('APP_NAME')}} trabajamos con muchos correos para que siempre haya más de una opción a cada lugar y en cada momento.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ftco-animate">
+                        <div class="media block-6 services border text-center">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-database"></span>
+                            </div>
+                            <div class="mt-3 media-body media-body-2">
+                                <h3 class="heading">ACOMPAÑAMOS A TUS CLIENTES</h3>
+                                <p>Olvidate de contestar preguntas, dudas, y preocuparte por si le llegó o no le llegó.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Our Customer End -->
-    <!-- Available App  Start-->
-    <div class="available-app-area">
-        <div class="container">
-            <div class="row d-flex justify-content-between">
-                <div class="col-xl-5 col-lg-6">
-                    <div class="app-caption">
-                        <div class="section-tittle section-tittle3">
-                            <h2>Our App Available For Any Device Download now</h2>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fug.</p>
-                            <div class="app-btn">
-                                <a href="#" class="app-btn1"><img src="{{ asset('landing/img/shape/app_btn1.png')}}" alt=""></a>
-                                <a href="#" class="app-btn2"><img src="{{ asset('landing/img/shape/app_btn2.png')}}" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6">
-                    <div class="app-img">
-                        <img src="{{ asset('landing/img/shape/available-app.png')}}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Shape -->
-        <div class="app-shape">
-            <img src="{{ asset('landing/img/shape/app-shape-top.png')}}" alt="" class="app-shape-top heartbeat d-none d-lg-block">
-            <img src="{{ asset('landing/img/shape/app-shape-left.png')}}" alt="" class="app-shape-left d-none d-xl-block">
-            <!-- <img src="assets/img/shape/app-shape-right.png" alt="" class="app-shape-right bounce-animate "> -->
-        </div>
-    </div>
-    <!-- Available App End-->
-    <!-- Say Something Start -->
-    <div class="say-something-aera pt-90 pb-90 fix">
-        <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="offset-xl-1 offset-lg-1 col-xl-5 col-lg-5">
-                    <div class="say-something-cap">
-                        <h2>Say Hello To The Collaboration Hub.</h2>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3">
-                    <div class="say-btn">
-                        <a href="#" class="btn radius-btn">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- shape -->
-        <div class="say-shape">
-            <img src="{{ asset('landing/img/shape/say-shape-left.png')}}" alt="" class="say-shape1 rotateme d-none d-xl-block">
-            <img src="{{ asset('landing/img/shape/say-shape-right.png')}}" alt="" class="say-shape2 d-none d-lg-block">
-        </div>
-    </div>
-    <!-- Say Something End -->
+</section>
 
-</main>
+<section class="ftco-section services-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-10 text-center heading-section ftco-animate">
+        <h2 class="mb-4">Descubre las soluciones logísticas que necesita tu negocio</h2>
+        <p>Controla toda tu logística desde un mismo sitio. Encuentra las soluciones que necesita tu negocio, reduce tiempo de operación y costos.</p>
+    </div>
+</div>
+<div class="row">
+  <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+    <div class="media block-6 services d-flex align-items-center">
+        <div class="row align-items-center h-100">
+            <div class="col-12 mx-auto">
+                <div class="card-title text-center">
+                    <h3 class="heading mb-3">Ahorra Dinero</h3> <span><i class="fas fa-hand-holding-usd fa-2x"></i></span>
+                    <p class="mb-0">Más de 250 opciones de envío con descuentos hasta de un 40%.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3 d-flex align-self-stretch ftco-animate">
+    <div class="media block-6 services d-flex align-items-center">
+        <div class="row align-items-center h-100">
+            <div class="col-12 mx-auto">
+                <div class="card-title text-center">
+                    <h3 class="heading mb-3">Incrementa tus ingresos</h3> <span><i class="fas fa-dollar-sign fa-2x"></i></i></span>
+                    <p class="mb-0">Convierte a tus visitantes en clientes mostrando en tiempo real opciones de envíos y flexibilidad de costos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 d-flex align-self-stretch ftco-animate">
+    <div class="media block-6 services d-flex align-items-center">
+        <div class="row align-items-center h-100">
+            <div class="col-12 mx-auto">
+                <div class="card-title text-center">
+                    <h3 class="heading mb-3"> Ahorra tiempo</h3><span><i class="far fa-hourglass fa-2x"></i></span>
+                    <p class="mb-0">Reduce tiempo al auto - sincronizar los datos de tus clientes, evitando errores.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 d-flex align-self-stretch ftco-animate">
+    <div class="media block-6 services d-flex align-items-center">
+        <div class="row align-items-center h-100">
+            <div class="col-12 mx-auto">
+                <div class="card-title text-center">
+                    <h3 class="heading mb-3"> Satisfacción al cliente </h3><span><i class="far fa-thumbs-up fa-2x"></i></i></span>
+                    <p class="mb-0">Reduce el soporte logístico hasta un 43% </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+</div>
+</section>
+{{--
+<section class="ftco-section ftco-counter img" id="section-counter">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+            <span class="subheading">More than 12,000 websites trusted hosted</span>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="row">
+              <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18 text-center">
+                  <div class="text">
+                    <strong class="number" data-number="12000">0</strong>
+                    <span>CMS Installation</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="100">0</strong>
+                <span>Awards Won</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18 text-center">
+          <div class="text">
+            <strong class="number" data-number="10000">0</strong>
+            <span>Registered Domains</span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+    <div class="block-18 text-center">
+      <div class="text">
+        <strong class="number" data-number="9000">0</strong>
+        <span>Satisfied Customers</span>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-4">Our Best Pricing</h2>
+        </div>
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-3 col-md-6 ftco-animate">
+          <div class="block-7">
+            <div class="text-center">
+                <h2 class="heading">Free</h2>
+                <span class="price"><sup>$</sup> <span class="number">0<small class="per">/mo</small></span>
+                <span class="excerpt d-block">100% free. Forever</span>
+                <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
+
+                <ul class="pricing-text mb-4">
+                  <li><strong>150 GB</strong> Bandwidth</li>
+                  <li><strong>100 GB</strong> Storage</li>
+                  <li><strong>$1.00 / GB</strong> Overages</li>
+                  <li>All features</li>
+              </ul>
+              <a href="#" class="btn btn-primary d-block px-3 py-3 mb-4">Choose Plan</a>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-3 col-md-6 ftco-animate">
+      <div class="block-7">
+        <div class="text-center">
+            <h2 class="heading">Startup</h2>
+            <span class="price"><sup>$</sup> <span class="number">19<small class="per">/mo</small></span></span>
+            <span class="excerpt d-block">All features are included</span>
+            <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
+
+            <ul class="pricing-text mb-4">
+              <li><strong>450 GB</strong> Bandwidth</li>
+              <li><strong>400 GB</strong> Storage</li>
+              <li><strong>$2.00 / GB</strong> Overages</li>
+              <li>All features</li>
+          </ul>
+          <a href="#" class="btn btn-primary d-block px-3 py-3 mb-4">Choose Plan</a>
+      </div>
+  </div>
+</div>
+<div class="col-lg-3 col-md-6 ftco-animate">
+  <div class="block-7">
+    <div class="text-center">
+        <h2 class="heading">Premium</h2>
+        <span class="price"><sup>$</sup> <span class="number">49<small class="per">/mo</small></span></span>
+        <span class="excerpt d-block">All features are included</span>
+        <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
+
+        <ul class="pricing-text mb-4">
+          <li><strong>250 GB</strong> Bandwidth</li>
+          <li><strong>200 GB</strong> Storage</li>
+          <li><strong>$5.00 / GB</strong> Overages</li>
+          <li>All features</li>
+      </ul>
+      <a href="#" class="btn btn-primary d-block px-3 py-3 mb-4">Choose Plan</a>
+  </div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 ftco-animate">
+  <div class="block-7">
+    <div class="text-center">
+        <h2 class="heading">Pro</h2>
+        <span class="price"><sup>$</sup> <span class="number">99<small class="per">/mo</small></span></span>
+        <span class="excerpt d-block">All features are included</span>
+        <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
+
+        <ul class="pricing-text mb-4">
+          <li><strong>450 GB</strong> Bandwidth</li>
+          <li><strong>400 GB</strong> Storage</li>
+          <li><strong>$20.00 / GB</strong> Overages</li>
+          <li>All features</li>
+      </ul>
+      <a href="#" class="btn btn-primary d-block px-3 py-3 mb-4">Choose Plan</a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+--}}
+<section class="ftco-section testimony-section">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 text-center heading-section ftco-animate">
+        <h2 class="mb-4">¿Cómo se siente recibir un pedido de {{env('APP_NAME')}}?</h2>
+        <p>LOS CLIENTES DE NUESTROS CLIENTES SON TAMBIÉN NUESTROS CLIENTES, Y ASÍ NOS LO EXPRESAN</p>
+    </div>
+</div>
+<div class="row ftco-animate">
+  <div class="col-md-12">
+    <div class="carousel-testimony owl-carousel ftco-owl">
+      <div class="item">
+        <div class="testimony-wrap p-4 text-center">
+          <div class="user-img mb-4" style="background-image: url(landing/images/person_1.jpg)">
+            <span class="quote d-flex align-items-center justify-content-center">
+              <i class="icon-quote-left"></i>
+          </span>
+      </div>
+      <div class="text">
+        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        <p class="name">Mark Web</p>
+        <span class="position">Marketing Manager</span>
+    </div>
+</div>
+</div>
+<div class="item">
+    <div class="testimony-wrap p-4 text-center">
+      <div class="user-img mb-4" style="background-image: url(landing/images/person_2.jpg)">
+        <span class="quote d-flex align-items-center justify-content-center">
+          <i class="icon-quote-left"></i>
+      </span>
+  </div>
+  <div class="text">
+    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+    <p class="name">Mark Web</p>
+    <span class="position">Interface Designer</span>
+</div>
+</div>
+</div>
+<div class="item">
+    <div class="testimony-wrap p-4 text-center">
+      <div class="user-img mb-4" style="background-image: url(landing/images/person_3.jpg)">
+        <span class="quote d-flex align-items-center justify-content-center">
+          <i class="icon-quote-left"></i>
+      </span>
+  </div>
+  <div class="text">
+    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+    <p class="name">Mark Web</p>
+    <span class="position">UI Designer</span>
+</div>
+</div>
+</div>
+<div class="item">
+    <div class="testimony-wrap p-4 text-center">
+      <div class="user-img mb-4" style="background-image: url(landing/images/person_1.jpg)">
+        <span class="quote d-flex align-items-center justify-content-center">
+          <i class="icon-quote-left"></i>
+      </span>
+  </div>
+  <div class="text">
+    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+    <p class="name">Mark Web</p>
+    <span class="position">Web Developer</span>
+</div>
+</div>
+</div>
+<div class="item">
+    <div class="testimony-wrap p-4 text-center">
+      <div class="user-img mb-4" style="background-image: url(landing/images/person_1.jpg)">
+        <span class="quote d-flex align-items-center justify-content-center">
+          <i class="icon-quote-left"></i>
+      </span>
+  </div>
+  <div class="text">
+    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+    <p class="name">Mark Web</p>
+    <span class="position">System Analyst</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+            <div class="col-md-7 text-center heading-section ftco-animate">
+                <span class="subheading">Services</span>
+                <h2 class="mb-4">Integra tu Tienda en Línea</h2>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 nav-link-wrap mb-5 pb-md-5 pb-sm-1 ftco-animate">
+            <div class="nav ftco-animate nav-pills justify-content-center text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link active" id="v-pills-nextgen-tab" data-toggle="pill" href="#v-pills-nextgen" role="tab" aria-controls="v-pills-nextgen" aria-selected="true">Next gen VPS</a>
+
+              <a class="nav-link" id="v-pills-performance-tab" data-toggle="pill" href="#v-pills-performance" role="tab" aria-controls="v-pills-performance" aria-selected="false">Performance</a>
+
+              <a class="nav-link" id="v-pills-effect-tab" data-toggle="pill" href="#v-pills-effect" role="tab" aria-controls="v-pills-effect" aria-selected="false">Effectiveness</a>
+          </div>
+      </div>
+      <div class="col-md-12 align-items-center ftco-animate">
+
+        <div class="tab-content ftco-animate" id="v-pills-tabContent">
+
+          <div class="tab-pane fade show active" id="v-pills-nextgen" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+            <div class="d-md-flex">
+                <div class="one-forth align-self-center">
+                    <img src="{{ asset('img/how-work-1.svg') }}" class="img-fluid" alt="">
+                </div>
+                <div class="one-half ml-md-5 align-self-center">
+                    <h2 class="mb-4">Toma control de la operación</h2>
+                    <p>Gestiona toda tu logística con ControlX. Recogemos, enviamos y notificamos por ti.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
+                    <p><a href="#" class="btn btn-primary py-3">¡Cotiza ya!</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="v-pills-performance" role="tabpanel" aria-labelledby="v-pills-performance-tab">
+            <div class="d-md-flex">
+                <div class="one-forth order-last align-self-center">
+                    <img src="landing/images/undraw_visual_data_b1wx.svg" class="img-fluid" alt="">
+                </div>
+                <div class="one-half order-first mr-md-5 align-self-center">
+                    <h2 class="mb-4">Performance VPS hosting</h2>
+                    <p>Automatiza tus procesos con integraciones disponibles para más de 17 ecommerce y marketplaces. Facilita la logística de tu empresa y ofrece mejor servicio a tus clientes.</p>
+                    <p><a href="#" class="btn btn-primary py-3">Get in touch</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="v-pills-effect" role="tabpanel" aria-labelledby="v-pills-effect-tab">
+            <div class="d-md-flex">
+                <div class="one-forth align-self-center">
+                    <img src="landing/images/undraw_business_plan_5i9d.svg" class="img-fluid" alt="">
+                </div>
+                <div class="one-half ml-md-5 align-self-center">
+                    <h2 class="mb-4">Effective VPS hosting</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
+                    <p><a href="#" class="btn btn-primary py-3">Get in touch</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+{{--}}
+<section class="ftco-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 text-center heading-section ftco-animate">
+        <h2>Recent Blog</h2>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+    </div>
+</div>
+<div class="row">
+  <div class="col-md-4 ftco-animate">
+    <div class="blog-entry">
+      <a href="blog-single.html" class="block-20" style="background-image: url('landing/images/image_1.jpg');">
+      </a>
+      <div class="text d-flex py-4">
+        <div class="meta mb-3">
+          <div><a href="#">May 8, 2019</a></div>
+          <div><a href="#">Admin</a></div>
+          <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+      </div>
+      <div class="desc pl-3">
+        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+    </div>
+</div>
+</div>
+</div>
+<div class="col-md-4 ftco-animate">
+    <div class="blog-entry" data-aos-delay="100">
+      <a href="blog-single.html" class="block-20" style="background-image: url('landing/images/image_2.jpg');">
+      </a>
+      <div class="text d-flex py-4">
+        <div class="meta mb-3">
+          <div><a href="#">May 8, 2019</a></div>
+          <div><a href="#">Admin</a></div>
+          <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+      </div>
+      <div class="desc pl-3">
+        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+    </div>
+</div>
+</div>
+</div>
+<div class="col-md-4 ftco-animate">
+    <div class="blog-entry" data-aos-delay="200">
+      <a href="blog-single.html" class="block-20" style="background-image: url('landing/images/image_3.jpg');">
+      </a>
+      <div class="text d-flex py-4">
+        <div class="meta mb-3">
+          <div><a href="#">May 8, 2019</a></div>
+          <div><a href="#">Admin</a></div>
+          <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+      </div>
+      <div class="desc pl-3">
+        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+--}}
+<section class="ftco-section ftco-partner">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm ftco-animate">
+                <a href="#" class="partner"><img src="landing/images/partner-1.png" class="img-fluid" alt="Colorlib Template"></a>
+            </div>
+            <div class="col-sm ftco-animate">
+                <a href="#" class="partner"><img src="landing/images/partner-2.png" class="img-fluid" alt="Colorlib Template"></a>
+            </div>
+            <div class="col-sm ftco-animate">
+                <a href="#" class="partner"><img src="landing/images/partner-3.png" class="img-fluid" alt="Colorlib Template"></a>
+            </div>
+            <div class="col-sm ftco-animate">
+                <a href="#" class="partner"><img src="landing/images/partner-4.png" class="img-fluid" alt="Colorlib Template"></a>
+            </div>
+            <div class="col-sm ftco-animate">
+                <a href="#" class="partner"><img src="landing/images/partner-5.png" class="img-fluid" alt="Colorlib Template"></a>
+            </div>
+            <div class="col-sm ftco-animate">
+                <a href="#" class="partner"><img src="landing/images/partner-6.png" class="img-fluid" alt="Colorlib Template"></a>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection
