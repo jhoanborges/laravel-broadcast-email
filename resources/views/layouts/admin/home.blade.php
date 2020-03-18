@@ -103,7 +103,7 @@
       <div class="row bg-white has-shadow">
         <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
           <div class="project-title d-flex align-items-center">
-            <div class="image has-shadow"><img src="img/project-1.jpg" alt="..." class="img-fluid"></div>
+            <div class="image has-shadow"><img src="{{ asset('admin_assets/img/project-1.jpg') }}" alt="..." class="img-fluid"></div>
             <div class="text">
               <h3 class="h4">Project Title</h3><small>Lorem Ipsum Dolor</small>
             </div>
@@ -126,7 +126,7 @@
       <div class="row bg-white has-shadow">
         <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
           <div class="project-title d-flex align-items-center">
-            <div class="image has-shadow"><img src="img/project-2.jpg" alt="..." class="img-fluid"></div>
+            <div class="image has-shadow"><img src="{{ asset('admin_assets/img/project-2.jpg')}}" alt="..." class="img-fluid"></div>
             <div class="text">
               <h3 class="h4">Project Title</h3><small>Lorem Ipsum Dolor</small>
             </div>
@@ -149,7 +149,7 @@
       <div class="row bg-white has-shadow">
         <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
           <div class="project-title d-flex align-items-center">
-            <div class="image has-shadow"><img src="img/project-3.jpg" alt="..." class="img-fluid"></div>
+            <div class="image has-shadow"><img src="{{ asset('admin_assets/img/project-3.jpg')}}" alt="..." class="img-fluid"></div>
             <div class="text">
               <h3 class="h4">Project Title</h3><small>Lorem Ipsum Dolor</small>
             </div>
@@ -172,7 +172,7 @@
       <div class="row bg-white has-shadow">
         <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
           <div class="project-title d-flex align-items-center">
-            <div class="image has-shadow"><img src="img/project-4.jpg" alt="..." class="img-fluid"></div>
+            <div class="image has-shadow"><img src="{{ asset('admin_assets/img/project-4.jpg')}}" alt="..." class="img-fluid"></div>
             <div class="text">
               <h3 class="h4">Project Title</h3><small>Lorem Ipsum Dolor</small>
             </div>
@@ -224,7 +224,7 @@
             </div>
           </div>
           <div class="card-body text-center">
-            <div class="client-avatar"><img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle">
+            <div class="client-avatar"><img src="{{ asset('admin_assets/img/avatar-2.jpg')}}" alt="..." class="img-fluid rounded-circle">
               <div class="status bg-green"></div>
             </div>
             <div class="client-title">
@@ -281,27 +281,27 @@
           </div>
           <div class="card-body no-padding">
             <div class="item d-flex align-items-center">
-              <div class="image"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+              <div class="image"><img src="{{ asset('admin_assets/img/avatar-1.jpg')}}" alt="..." class="img-fluid rounded-circle"></div>
               <div class="text"><a href="#">
                 <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Aria Smith.   </small></div>
               </div>
               <div class="item d-flex align-items-center">
-                <div class="image"><img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                <div class="image"><img src="{{ asset('admin_assets/img/avatar-2.jpg')}}" alt="..." class="img-fluid rounded-circle"></div>
                 <div class="text"><a href="#">
                   <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Frank Williams.   </small></div>
                 </div>
                 <div class="item d-flex align-items-center">
-                  <div class="image"><img src="img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                  <div class="image"><img src="{{ asset('admin_assets/img/avatar-3.jpg')}}" alt="..." class="img-fluid rounded-circle"></div>
                   <div class="text"><a href="#">
                     <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Ashley Wood.   </small></div>
                   </div>
                   <div class="item d-flex align-items-center">
-                    <div class="image"><img src="img/avatar-4.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                    <div class="image"><img src="{{ asset('admin_assets/img/avatar-4.jpg')}}" alt="..." class="img-fluid rounded-circle"></div>
                     <div class="text"><a href="#">
                       <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Jason Doe.   </small></div>
                     </div>
                     <div class="item d-flex align-items-center">
-                      <div class="image"><img src="img/avatar-5.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                      <div class="image"><img src="{{ asset('admin_assets/img/avatar-5.jpg')}}" alt="..." class="img-fluid rounded-circle"></div>
                       <div class="text"><a href="#">
                         <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Sam Martinez.   </small></div>
                       </div>
@@ -442,7 +442,8 @@
                       <!-- Item-->
                       <div class="item">
                         <div class="feed d-flex justify-content-between">
-                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src="img/avatar-5.jpg" alt="person" class="img-fluid rounded-circle"></a>
+                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile">
+                            <img src="{{ asset('admin_assets/img/avatar-5.jpg')}}" alt="person" class="img-fluid rounded-circle"></a>
                             <div class="content">
                               <h5>Aria Smith</h5><span>Posted a new blog </span>
                               <div class="full-date"><small>Today 5:60 pm - 12.06.2014</small></div>
@@ -454,7 +455,8 @@
                       <!-- Item-->
                       <div class="item">
                         <div class="feed d-flex justify-content-between">
-                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src="img/avatar-2.jpg" alt="person" class="img-fluid rounded-circle"></a>
+                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile">
+                            <img src="{{ asset('admin_assets/img/avatar-2.jpg')}}" alt="person" class="img-fluid rounded-circle"></a>
                             <div class="content">
                               <h5>Frank Williams</h5><span>Posted a new blog </span>
                               <div class="full-date"><small>Today 5:60 pm - 12.06.2014</small></div>
@@ -467,7 +469,8 @@
                       <!-- Item-->
                       <div class="item clearfix">
                         <div class="feed d-flex justify-content-between">
-                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src="img/avatar-3.jpg" alt="person" class="img-fluid rounded-circle"></a>
+                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile">
+                            <img src="{{ asset('admin_assets/img/avatar-3.jpg')}}" alt="person" class="img-fluid rounded-circle"></a>
                             <div class="content">
                               <h5>Ashley Wood</h5><span>Posted a new blog </span>
                               <div class="full-date"><small>Today 5:60 pm - 12.06.2014</small></div>

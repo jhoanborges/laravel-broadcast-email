@@ -45,8 +45,8 @@
             <li><a href="#" class="d-block">¿Como funciona?</a></li>
             <li><a href="#" class="d-block">Commerce</a></li>
             <li><a href="#" class="d-block">Contacto</a></li>
-            <li><a href="#" class="d-block">Aviso de privacidad</a></li>
-            <li><a href="#" class="d-block">Términos y condiciones</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#avisodeprivacidad" class="d-block">Aviso de privacidad</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#terminos" class="d-block">Términos y condiciones</a></li>
         </ul>
     </div>
 </div>

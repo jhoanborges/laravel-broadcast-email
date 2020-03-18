@@ -407,7 +407,7 @@
 </div>
 </section>
 
-<section class="ftco-section bg-light">
+<section class="ftco-section bg-light mb-5">
     <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
             <div class="col-md-7 text-center heading-section ftco-animate">
@@ -535,7 +535,7 @@
 </div>
 </div>
 </section>
---}}
+
 <section class="ftco-section ftco-partner">
     <div class="container">
         <div class="row">
@@ -560,5 +560,5 @@
         </div>
     </div>
 </section>
-
+--}}
 @endsection

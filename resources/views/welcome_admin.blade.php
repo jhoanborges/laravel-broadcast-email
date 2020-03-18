@@ -9,20 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
     <!-- Google fonts - Poppins -->
-    <link rel="stylesheet" href="{{url('css/google-font.css')}}">
+    <link rel="stylesheet" href="{{url('admin_assets/css/google-font.css')}}">
 
     <!-- Favicon-->
-    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{asset('admin_assets/img/favicon.ico')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
 
-    <link rel="stylesheet"  id="theme-stylesheet" href="{{url('css/dataTables.bootstrap4.min.css')}}">
-    <link rel="stylesheet" href="{{url('css/select2.min.css')}}">
-    <link rel="stylesheet" href="{{url('css/toastr.min.css')}}">
+    <link rel="stylesheet"  id="theme-stylesheet" href="{{url('admin_assets/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{url('admin_assets/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{url('admin_assets/css/toastr.min.css')}}">
 
 
-    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('admin_assets/css/custom.css')}}">
 
 
     @yield('extra-css')
@@ -46,23 +46,23 @@
 
         <script src="{{asset('js/app.js')}}"></script>
         <script src="{{asset('js/all.js')}}"></script>
-            <script src="{{url('js/jquery.dataTables.min.js')}}"></script>
-            <script src="{{url('js/dataTables.bootstrap4.min.js')}}"></script>
+        <script src="{{url('admin_assets/js/jquery.dataTables.min.js')}}"></script>
+        <script src="{{url('admin_assets/js/dataTables.bootstrap4.min.js')}}"></script>
 
-    <script src="{{url('js/loadingoverlay.min.js')}}"></script>
+        <script src="{{url('admin_assets/js/loadingoverlay.min.js')}}"></script>
 
-            <script src="{{url('js/select2.min.js')}}"></script>
-    <script src="{{url('js/toastr.min.js')}}"></script>
+        <script src="{{url('admin_assets/js/select2.min.js')}}"></script>
+        <script src="{{url('admin_assets/js/toastr.min.js')}}"></script>
 
-    <!--datatables buttons and print-->
-    <script src="{{url('js/dataTables.buttons.min.js')}}"></script>
-    <script src="{{url('js/buttons.flash.min.js')}}"></script>
-    <script src="{{url('js/jszip.min.js')}}"></script>
-    <script src="{{url('js/pdfmake.min.js')}}"></script>
-    <script src="{{url('js/vfs_fonts.js')}}"></script>
-    <script src="{{url('js/buttons.html5.min.js')}}"></script>
-    <script src="{{url('js/buttons.print.min.js')}}"></script>
-    <script src="{{url('js/sweetalert2@9.js')}}"></script>
+        <!--datatables buttons and print-->
+        <script src="{{url('admin_assets/js/dataTables.buttons.min.js')}}"></script>
+        <script src="{{url('admin_assets/js/buttons.flash.min.js')}}"></script>
+        <script src="{{url('admin_assets/js/jszip.min.js')}}"></script>
+        <script src="{{url('admin_assets/js/pdfmake.min.js')}}"></script>
+        <script src="{{url('admin_assets/js/vfs_fonts.js')}}"></script>
+        <script src="{{url('admin_assets/js/buttons.html5.min.js')}}"></script>
+        <script src="{{url('admin_assets/js/buttons.print.min.js')}}"></script>
+        <script src="{{url('admin_assets/js/sweetalert2@9.js')}}"></script>
 
 
         @yield('extra-js')

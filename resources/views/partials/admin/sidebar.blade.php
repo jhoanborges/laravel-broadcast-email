@@ -2,7 +2,7 @@
       <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+            <div class="avatar"><img src="{{ asset('admin_assets/img/avatar-1.jpg')}}" alt="..." class="img-fluid rounded-circle"></div>
             @if(Auth::check() )
             <div class="title">
               <h1 class="h4">{{Auth::user()->name}} {{Auth::user()->apellidos}}</h1>
