@@ -13,6 +13,4 @@ require('./bootstrap');
  */
 
 require('./components/Example');
-require('./components/MyTable');
-require('./components/Table');
-
+require('./components/TableComponent');

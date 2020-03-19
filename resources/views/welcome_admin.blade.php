@@ -37,27 +37,27 @@
         </div>
         <!-- JavaScript files-->
 
-
         <script src="{{asset('js/app.js')}}"></script>
+
         <script src="{{asset('js/all.js')}}"></script>
-        <script src="{{url('admin_assets/js/jquery.dataTables.min.js')}}"></script>
-        <script src="{{url('admin_assets/js/dataTables.bootstrap4.min.js')}}"></script>
+        <script src="{{asset('admin_assets/js/jquery.dataTables.min.js')}}"></script>
+        <script src="{{asset('admin_assets/js/dataTables.bootstrap4.min.js')}}"></script>
 
-        <script src="{{url('admin_assets/js/loadingoverlay.min.js')}}"></script>
+        <script src="{{asset('admin_assets/js/loadingoverlay.min.js')}}"></script>
 
-        <script src="{{url('admin_assets/js/select2.min.js')}}"></script>
-        <script src="{{url('admin_assets/js/toastr.min.js')}}"></script>
-        <script src="{{url('admin_assets/js/toastr_options.js')}}"></script>
+        <script src="{{asset('admin_assets/js/select2.min.js')}}"></script>
+        <script src="{{asset('admin_assets/js/toastr.min.js')}}"></script>
+        <script src="{{asset('admin_assets/js/toastr_options.js')}}"></script>
 
         <!--datatables buttons and print-->
-        <script src="{{url('admin_assets/js/dataTables.buttons.min.js')}}"></script>
-        <script src="{{url('admin_assets/js/buttons.flash.min.js')}}"></script>
-        <script src="{{url('admin_assets/js/jszip.min.js')}}"></script>
-        <script src="{{url('admin_assets/js/pdfmake.min.js')}}"></script>
-        <script src="{{url('admin_assets/js/vfs_fonts.js')}}"></script>
-        <script src="{{url('admin_assets/js/buttons.html5.min.js')}}"></script>
-        <script src="{{url('admin_assets/js/buttons.print.min.js')}}"></script>
-        <script src="{{url('admin_assets/js/sweetalert2@9.js')}}"></script>
+        <script src="{{asset('admin_assets/js/dataTables.buttons.min.js')}}"></script>
+        <script src="{{asset('admin_assets/js/buttons.flash.min.js')}}"></script>
+        <script src="{{asset('admin_assets/js/jszip.min.js')}}"></script>
+        <script src="{{asset('admin_assets/js/pdfmake.min.js')}}"></script>
+        <script src="{{asset('admin_assets/js/vfs_fonts.js')}}"></script>
+        <script src="{{asset('admin_assets/js/buttons.html5.min.js')}}"></script>
+        <script src="{{asset('admin_assets/js/buttons.print.min.js')}}"></script>
+        <script src="{{asset('admin_assets/js/sweetalert2@9.js')}}"></script>
 
         @include('sweetalert::alert')
         @yield('extra-js')
