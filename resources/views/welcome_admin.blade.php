@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{url('admin_assets/css/google-font.css')}}">
 
     <!-- Favicon-->
-    <link rel="shortcut icon" href="{{asset('admin_assets/img/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 

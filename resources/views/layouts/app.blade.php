@@ -1,3 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrap Under Construction - Template by Bootstrapious.com</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Google fonts - Roboto for copy, Montserrat for headings-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="{{ asset('css/style.login.css')}}" id="theme-stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" id="theme-stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/propeller.css')}}" id="theme-stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/colors.css')}}" id="theme-stylesheet">
+    <link rel="stylesheet" href="{{ asset('landing/css/skin-default.css')}}" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico')}}">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+@yield('content')
+    <!-- JavaScript files-->
+    <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js')}}"></script>
+    <script src="{{ asset('js/propeller.js')}}"></script>
+    {{--<script src="js/front.js"></script>--}}
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  </body>
+</html>
+
+
+
 {{--<!doctype html
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -78,7 +119,7 @@
     </div>
 </body>
 </html>
---}}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,50 +129,34 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="{{asset('login_assets/images/icons/favicon.ico')}}"/>
+    <link rel="icon" type="image/png" href="{{asset('img/favicon.ico')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/colors.css')}}">
+
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('login_assets/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('/vendor/font-awesome/css/all.min.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('login_assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('login_assets/vendor/animate/animate.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('login_assets/vendor/css-hamburgers/hamburgers.min.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('login_assets/vendor/animsition/css/animsition.min.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('login_assets/vendor/select2/select2.min.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('login_assets/vendor/daterangepicker/daterangepicker.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('login_assets/css/util.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('landing/css/skin-default.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('login_assets/css/main.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/propeller.css')}}">
+
+
     <!--===============================================================================================-->
 </head>
 <body style="background-color: #666666;">
 
     @yield('content')
 
-    <!--===============================================================================================-->
     <script src="{{asset('login_assets/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
     <!--===============================================================================================-->
-    <script src="{{asset('login_assets/vendor/animsition/js/animsition.min.js')}}"></script>
-    <!--===============================================================================================-->
     <script src="{{asset('login_assets/vendor/bootstrap/js/popper.js')}}"></script>
-    <script src="{{asset('login_assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-    <!--===============================================================================================-->
-    <script src="{{asset('login_assets/vendor/select2/select2.min.js')}}"></script>
-    <!--===============================================================================================-->
-    <script src="{{asset('login_assets/vendor/daterangepicker/moment.min.js')}}"></script>
-    <script src="{{asset('login_assets/vendor/daterangepicker/daterangepicker.js')}}"></script>
-    <!--===============================================================================================-->
-    <script src="{{asset('login_assets/vendor/countdowntime/countdowntime.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <!-- Propeller Global js -->
+<script src="http://propeller.in/components/global/js/global.js"></script>
     <!--===============================================================================================-->
     <script src="{{asset('js/propeller.js')}}"></script>
-    <script src="{{asset('login_assets/js/main.js')}}"></script>
 
 </body>
 </html>
+--}}
+
+

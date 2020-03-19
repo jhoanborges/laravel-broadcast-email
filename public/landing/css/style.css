@@ -8165,7 +8165,7 @@ h1, h2, h3, h4, h5,
   color: #6927ff !important; }
 
 .ftco-navbar-light {
-  background: transparent !important;
+  background: transparent ;
   position: absolute;
   top: 20px;
   left: 0;
@@ -8173,7 +8173,7 @@ h1, h2, h3, h4, h5,
   z-index: 3; }
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
-      background: #000 !important;
+      background: #000 ;
       position: relative;
       top: 0; } }
   .ftco-navbar-light .navbar-brand {
@@ -8261,7 +8261,7 @@ h1, h2, h3, h4, h5,
     color: #6927ff; }
   .ftco-navbar-light .navbar-toggler {
     border: none;
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     padding-right: 0;
     text-transform: uppercase;
@@ -8277,7 +8277,7 @@ h1, h2, h3, h4, h5,
     left: 0;
     top: 0;
     margin-top: -130px;
-    background: #fff !important;
+    background: #fff;
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
     @media (max-width: 991.98px) {
@@ -8286,11 +8286,12 @@ h1, h2, h3, h4, h5,
         padding-right: 0 !important;
         padding-bottom: 0 !important; } }
     .ftco-navbar-light.scrolled .nav-item.active > a {
-      color: #6927ff !important; }
+      color: #6927ff
+  }
     .ftco-navbar-light.scrolled .nav-item.cta > a {
-      color: #fff !important;
+      color: #fff ;
       background: #6927ff;
-      border: none !important;
+      border: none;
       padding-top: 0.5rem !important;
       padding-bottom: .5rem !important;
       padding-left: 20px !important;
@@ -8313,8 +8314,8 @@ h1, h2, h3, h4, h5,
         padding-right: 0rem !important; } }
     .ftco-navbar-light.scrolled .navbar-toggler {
       border: none;
-      color: rgba(0, 0, 0, 0.5) !important;
-      border-color: rgba(0, 0, 0, 0.5) !important;
+      color: rgba(0, 0, 0, 0.5) ;
+      border-color: rgba(0, 0, 0, 0.5) ;
       cursor: pointer;
       padding-right: 0;
       text-transform: uppercase;
@@ -8323,9 +8324,9 @@ h1, h2, h3, h4, h5,
     .ftco-navbar-light.scrolled .nav-link {
       padding-top: 0.9rem !important;
       padding-bottom: 0.9rem !important;
-      color: #000 !important; }
+      color: #000; }
       .ftco-navbar-light.scrolled .nav-link.active {
-        color: #6927ff !important; }
+        color: #6927ff ; }
     .ftco-navbar-light.scrolled.awake {
       margin-top: 0px;
       -webkit-transition: .3s all ease-out;

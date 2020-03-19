@@ -8,9 +8,10 @@
     <title>{{env('APP_NAME')}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="stylesheet" href="{{ asset('css/propeller.min.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,,500,600,700" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/colors.css') }}">
-
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
     <link rel="stylesheet" href="{{ asset('landing/css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('landing/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('landing/css/owl.carousel.min.css') }}">
@@ -24,7 +25,11 @@
     <link rel="stylesheet" href="{{ asset('landing/css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('landing/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/font-awesome/css/all.css') }}">
+
+
+
     <link rel="stylesheet" href="{{ asset('landing/css/landing_custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('landing/css/skin-default.css') }}">
 </head>
 <body>
 
@@ -51,7 +56,15 @@
 <script src="{{ asset('landing/js/jquery.animateNumber.min.js') }}"></script>
 <script src="{{ asset('landing/js/bootstrap-datepicker.js') }}"></script>
 <script src="{{ asset('landing/js/scrollax.min.js') }}"></script>
+<script src="{{ asset('js/propeller.min.js') }}"></script>
+
+<script src="{{ asset('js/particles.min.js') }}"></script>
+<script src="{{ asset('js/default_particles.js') }}"></script>
+
+
 <script src="{{ asset('landing/js/main.js') }}"></script>
+
+
 
 </body>
 </html>

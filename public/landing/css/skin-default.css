@@ -1,0 +1,144 @@
+.ftco-navbar-light .navbar-nav > .nav-item.cta > a {
+    color: var(--orange);
+    border: 1px solid var(--orange);
+    background: #fff
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item.cta > a:hover {
+    color: #fff;
+    background:var(--red-orange);
+    border: 1px solid var(--red-orange);
+}
+
+
+.ftco-navbar-light.scrolled .navbar-toggler {
+    color: var(--black);
+    border-color: var(--black);
+}
+
+.btn.btn-primary {
+    background: var(--orange);
+    border: 1px solid var(--orange);
+    color: #fff;
+}
+
+.ftco-section .nav-pills .nav-link.active{
+      background: var(--orange);
+}
+.ftco-section .nav-pills .nav-link:hover {
+    background: var(--red-orange);
+}
+.ftco-section .nav-pills .nav-link {
+    color: var(--black);
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.services {
+    background:  var(--orange);
+}
+
+.services .icon span {
+    color: var(--orange);
+}
+.services:hover {
+    background: var(--red-orange);
+}
+.services .icon {
+    color: var(--orange);
+    background: #fff;
+}
+
+.services .icon:hover {
+    background: #fff;
+}
+.services:hover .icon span {
+    color: var(--red-orange);
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item.active > a {
+    color: #fff
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+    color: rgba(253,252,255,0.75);
+}
+
+.subheading{
+    color: var(--orange);
+}
+
+.ftco-footer {
+    background:var(--orange);
+        /*-webkit-box-shadow: 0px 6px 3px var(--orange);
+    -moz-box-shadow: 0px 6px 3px var(--orange);
+    box-shadow: 0px 6px 3px var(--orange);*/
+}
+.ftco-footer a, .ftco-footer p, .block-23 ul li span {
+    color: #fff
+}
+
+.btn.btn-primary:hover {
+    border: 1px solid  var(--red-orange);
+    background:  var(--red-orange);
+    color:  #fff
+}
+
+.ftco-navbar-light .navbar-toggler{
+    color: #fff
+}
+
+.ftco-navbar-light .navbar-toggler:hover, .ftco-navbar-light .navbar-toggler:focus {
+    color: #fff
+}
+
+.testimony-wrap .user-img .quote {
+    background:var(--orange)
+}
+
+.btn-primary .ink {
+  background-color: var(--orange);
+}
+.btn-primary .ink {
+  background-color: var(--red-orange);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color:  var(--orange);
+    border-color: var(--orange);
+}
+
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem var(--red-orange);
+    box-shadow: 0 0 0 0.2rem var(--red-orange);
+}
+
+.bg-black{
+    color:#fff;
+    background: var(--black)
+}
+
+/*scrolled*/
+.ftco-navbar-light.scrolled .nav-item.active > a{
+    color: var(--orange);
+}
+.ftco-navbar-light.scrolled .nav-link{
+    color: var(--orange) !important;
+}
+
+
+@media (max-width: 991.98px){
+.ftco-navbar-light {
+    background: transparent;
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link{
+color: var(--black)
+}
+}
+

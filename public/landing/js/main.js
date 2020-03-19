@@ -18,6 +18,22 @@
 	  verticalOffset: 0
   });
 
+    var smoothscroll =  function(){
+        $('a[href*="#"]:not([href="#"])').on('click', function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') || location.hostname == this.hostname) {
+              var target = $(this.hash);
+                  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                  if (target.length) {
+                    $('html,body').animate({
+                      scrollTop: target.offset().top - 65,
+                      }, 1000);
+                      return false;
+                  }
+            }
+        });
+    }
+
+    smoothscroll();
 
 	var fullHeight = function() {
 
@@ -31,7 +47,7 @@
 
 	// loader
 	var loader = function() {
-		setTimeout(function() { 
+		setTimeout(function() {
 			if($('#ftco-loader').length > 0) {
 				$('#ftco-loader').removeClass('show');
 			}
@@ -69,6 +85,9 @@
 	    }
 		});
 		$('.carousel-testimony').owlCarousel({
+                autoplay:true,
+    autoplayTimeout:4000,
+    autoplayHoverPause:true,
 			center: true,
 			loop: true,
 			items:1,
@@ -125,19 +144,21 @@
 
 			if (st > 150) {
 				if ( !navbar.hasClass('scrolled') ) {
-					navbar.addClass('scrolled');	
+					navbar.addClass('scrolled');
+                     $('.navbar .navbar-brand img').attr('src','img/logo-full-dark.png');
 				}
-			} 
+			}
 			if (st < 150) {
 				if ( navbar.hasClass('scrolled') ) {
+                     $('.navbar .navbar-brand img').attr('src','img/logo-white-full.png');
 					navbar.removeClass('scrolled sleep');
 				}
-			} 
+			}
 			if ( st > 30 ) {
 				if ( !navbar.hasClass('awake') ) {
-					navbar.addClass('awake');	
+					navbar.addClass('awake');
 				}
-				
+
 				if(sd.length > 0) {
 					sd.addClass('sleep');
 				}
@@ -154,9 +175,9 @@
 		});
 	};
 	scrollWindow();
-	
+
 	var counter = function() {
-		
+
 		$('#section-counter').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
@@ -173,7 +194,7 @@
 					  }, 7000
 					);
 				});
-				
+
 			}
 
 		} , { offset: '95%' } );
@@ -186,7 +207,7 @@
 		$('.ftco-animate').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-				
+
 				i++;
 
 				$(this.element).addClass('item-animate');
@@ -208,9 +229,9 @@
 							el.removeClass('item-animate');
 						},  k * 50, 'easeInOutExpo' );
 					});
-					
+
 				}, 100);
-				
+
 			}
 
 		} , { offset: '95%' } );
@@ -273,6 +294,9 @@
 
     fixedContentPos: false
   });
+
+
+
 
 
 })(jQuery);
