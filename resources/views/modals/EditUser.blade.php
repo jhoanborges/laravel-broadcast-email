@@ -1,5 +1,5 @@
-<div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
@@ -79,6 +79,12 @@
       </select>
       <span class="error" role="alert"> </span>
   </div>
+
+   <div class="col">
+       <label for="phone" class="required">Teléfono:</label>
+       <input name="phone" type="text" class="form-control phone"  required  maxlength="191">
+       <span class="error" role="alert"> </span>
+   </div>
 
 
 </div>

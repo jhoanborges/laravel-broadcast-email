@@ -23,9 +23,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin', 'AdminController@index')->name('admin.index');
 
     //users
-    Route::get('/users', 'UsersController@index')->name('users.index');
+    Route::get('/admin/users', 'UsersController@index')->name('users.index');
     Route::post('/users.get', 'UsersController@get')->name('users.get');
     Route::post('/users.add', 'UsersController@store')->name('users.add');
     Route::post('/users.update', 'UsersController@update')->name('users.update');
     Route::post('/users.delete', 'UsersController@destroy')->name('users.delete');
+
+    Route::get('/admin/ordenes', 'OrdersController@index')->name('orders.index');
+
 });

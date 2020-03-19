@@ -2,9 +2,9 @@
 @section('content')
 
 <section class="dashboard-counts no-padding-bottom">
-    <div class="container-fluid dash-content">
+    <div class="container-fluid dash-content d-flex">
         <h1  class="darkblue  mt-1">Usuarios</h1>
-        <button class="btn btn-secondary custom-secondary ml-4 pointer"
+        <button class="btn btn-primary custom-secondary ml-4 pointer"
         data-toggle="modal" data-target="#addModal"
         >Crear</button>
 
@@ -28,9 +28,9 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nombre</th>
-                                <th>Apellidos</th>
                                 <th>Email</th>
                                 <th>Rol</th>
+                                <th>Teléfono</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -68,7 +68,7 @@
     });
         var table =   $('#myTable')
         .on('processing.dt', function (e, settings, processing) {
-         if (processing) {
+           if (processing) {
             $('.page').LoadingOverlay("show", {
                 image       : "",
                 fontawesomeColor: "#009FDA",
@@ -83,7 +83,7 @@
 "drawCallback": function( settings ) {
     $('[data-toggle="tooltip"]').tooltip();
 },
-
+"pageLength": 50,
 stateSave: true,
 "processing": false,
 "serverSide": true,
@@ -121,11 +121,15 @@ ajax: {
 
 "columns": [
 {"data": "id"},
-{"data": "name"},
-{"data": "apellidos"},
+
+{  "render" : function (data, type, row) {
+    return row.name + row.apellidos;
+},
+},
+
 {"data": "email"},
 {"data": "role" },
-//{"data": "sexo" },
+{"data": "phone" },
 
 /*
 {  "render" : function (data, type, row) {
@@ -166,6 +170,7 @@ ajax: {
         data-username="'+row.username+'"\
         data-rol="'+row.rol+'"\
         data-plazas="'+row.plazas+'"\
+        data-phone="'+row.phone+'"\
         >\
         <i class="fas fa-edit fa-2x" style=""></i>\
         </a>\
@@ -225,6 +230,7 @@ ajax: {
       var username = button.data('username')
       var email = button.data('email')
       var plazas = button.data('plazas')
+      var phone = button.data('phone')
 
 
       modal.find('.modal-body .name').val(name)
@@ -233,6 +239,7 @@ ajax: {
       modal.find('.modal-body .apellidos').val(apellidos)
       modal.find('.modal-body .email').val(email)
       modal.find('.modal-body .username').val(username)
+      modal.find('.modal-body .phone').val(phone)
 
       modal.find('.modal-body .select2').val(plazas).change()
 
@@ -245,94 +252,69 @@ ajax: {
 
 <script>
     function deleteNoty(id){
-     Swal.fire({
-      title: '¿Está seguro de eliminar este registro?',
-      text: "No serás capaz de recuperarlo nuevamente",
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#009FDA',
-      cancelButtonColor: '#ff3f3f',
-      cancelButtonText: 'Cancelar',
-      confirmButtonText: 'Borrar'
-  }).then((result) => {
-      if (result.value) {
+       Swal.fire({
+          title: '¿Está seguro de eliminar este registro?',
+          text: "No serás capaz de recuperarlo nuevamente",
+          type: 'warning',
+          showCancelButton: true,
+          cancelButtonText: 'Cancelar',
+          confirmButtonText: 'Borrar'
+      }).then((result) => {
+          if (result.value) {
 
-        var table = $('#myTable');
-        var page = $('.page');
+            var table = $('#myTable');
+            var page = $('.page');
 
-        var data = new FormData();
-        data.append('id', id);
+            var data = new FormData();
+            data.append('id', id);
 
-        $.ajax({
-            url: "{{ route('users.delete') }}",
-            data: data,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            type: 'POST',
+            $.ajax({
+                url: "{{ route('users.delete') }}",
+                data: data,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                type: 'POST',
 
-            beforeSend: function () {
-                page.LoadingOverlay("show", {
-                    image       : "",
-                    fontawesomeColor: "#009FDA",
-                    fontawesome : "fas fa-spinner fa-spin",
-                    progress    : true
-                });
-            },
-
-            success: function(response) {
-                table.DataTable().ajax.reload( null, false);
-
-
-                page.LoadingOverlay("hide")
-
-                const Toast = swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 10000
-                });
-
-                Toast.fire({
-                    type: 'success',
-                    title: response.message
-                });
-
-
-            },
-
-
-            error:function (xhr, ajaxOptions, thrownError){
-                page.LoadingOverlay("hide")
-
-                const Toast = swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 10000
-                });
-
-                switch (xhr.status) {
-                    case 404:
-                    Toast.fire({
-                        type: 'error',
-                        title: JSON.parse(xhr.responseText).message,
+                beforeSend: function () {
+                    page.LoadingOverlay("show", {
+                        image       : "",
+                        fontawesomeColor: "#009FDA",
+                        fontawesome : "fas fa-spinner fa-spin",
+                        progress    : true
                     });
-                    return false;
+                },
+
+                success: function(response) {
+                    table.DataTable().ajax.reload( null, false);
+                    page.LoadingOverlay("hide")
+                    toastr["success"](response.message)
+
+
+
+                },
+
+
+                error:function (xhr, ajaxOptions, thrownError){
+                    page.LoadingOverlay("hide")
+
+                    switch (xhr.status) {
+                        case 404:
+                        toastr["error"](JSON.parse(xhr.responseText).message)
+
+                        return false;
+                    }
+
+                    toastr["error"](response.message)
+
+
+
                 }
+            });
 
-
-                Toast.fire({
-                    type: 'error',
-                    title: response.message
-                });
-
-            }
-        });
-
-    }
-})
-}
+        }
+    })
+  }
 
 </script>
 
@@ -376,6 +358,8 @@ ajax: {
             data.append('password', dataObj['password']);
             data.append('password_confirmation', dataObj['password_confirmation']);
             data.append('rol', dataObj['rol']);
+            data.append('phone', dataObj['phone']);
+
 
             var select =  $('.select').val()
             if (select) {
@@ -420,22 +404,10 @@ ajax: {
                     })
                     document.getElementById('form').reset();
 
-
                     table.DataTable().ajax.reload( null, false);
-
                     form.LoadingOverlay("hide")
+                    toastr["success"](response.message)
 
-                    const Toast = swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 10000
-                    });
-
-                    Toast.fire({
-                        type: 'success',
-                        title: response.message
-                    });
                 },
 
                 error:function (xhr, ajaxOptions, thrownError){
@@ -445,241 +417,165 @@ ajax: {
 
                     toastr.clear()
 
-                    toastr.options = {
-                      "closeButton": true,
-                      "debug": false,
-                      "newestOnTop": true,
-                      "progressBar": true,
-                      "positionClass": "toast-top-right",
-                      "preventDuplicates": true,
-                      "onclick": null,
-                      "showDuration": "1000",
-                      "hideDuration": "1000",
-                      "timeOut": "30000",
-                      "extendedTimeOut": "1000",
-                      "progressBar": true,
-                      "showEasing": "swing",
-                      "hideEasing": "linear",
-                      "showMethod": "fadeIn",
-                      "hideMethod": "fadeOut"
-                  }
-
-                  if (xhr.responseJSON.errors) {
-                    $.each(xhr.responseJSON.errors, function(key, value){
-                        toastr["error"](value)
-                    });
-                    return false;
-                }
-
-
-
-
-                const Toast = swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 10000
-                });
-
-                switch (xhr.status) {
-                    case 404:
                     if (xhr.responseJSON.errors) {
                         $.each(xhr.responseJSON.errors, function(key, value){
-                            console.log(key)
-                            console.log(value)
-                            $('#'+key).next('.error').append('<strong style="display:inline-block" class="invalid-feedback">'+value+'</strong>').show();
+                            toastr["error"](value)
                         });
+                        return false;
                     }
 
-                    Toast.fire({
-                        type: 'error',
-                        title: JSON.parse(xhr.responseText).message,
-                    });
-                    return false;
+                    switch (xhr.status) {
+                        case 404:
+                        if (xhr.responseJSON.errors) {
+                            $.each(xhr.responseJSON.errors, function(key, value){
+                                console.log(key)
+                                console.log(value)
+                                $('#'+key).next('.error').append('<strong style="display:inline-block" class="invalid-feedback">'+value+'</strong>').show();
+                            });
+                        }
+
+                        toastr["success"](JSON.parse(xhr.responseText).message)
+
+                        return false;
+                    }
+
+                    toastr["error"](response.message)
+
 
                 }
-
-                Toast.fire({
-                    type: 'error',
-                    title: response.message
-                });
-            }
-        });
+            });
 })//add modal
 
 
 
 
-$("#formEdit").on("submit", function(e){
+        $("#formEdit").on("submit", function(e){
 
-    var form = $(this)
-    var table = $('#myTable');
-    var page = $('.page');
+            var form = $(this)
+            var table = $('#myTable');
+            var page = $('.page');
 
-    var array = $(this).serializeArray();
-    dataObj = {};
+            var array = $(this).serializeArray();
+            dataObj = {};
 
-    $(array).each(function(i, field){
-      dataObj[field.name] = field.value;
-  });
-
-
-
-    data = new FormData();
-    data.append('id', dataObj['id']);
-    data.append('name', dataObj['name']);
-    data.append('apellidos', dataObj['apellidos']);
-    data.append('email', dataObj['email']);
-    data.append('username', dataObj['username']);
-    if(dataObj['password'].length){
-        data.append('password', dataObj['password']);
-
-    }
-
-    if(dataObj['password_confirmation'].length){
-        data.append('password_confirmation', dataObj['password_confirmation']);
-    }
-
-    data.append('rol', dataObj['rol']);
-
-    var select =  $('#select2').val()
-    if (select) {
-        data.append('plaza', select);
-    }
-
-    e.preventDefault();
-
-    $.ajaxSetup({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-
-    $.ajax({
-        url: '{{route('users.update')}}',
-        data: data,
-        enctype: 'multipart/form-data',
-        processData: false,
-        contentType: false,
-        type: 'POST',
-
-        beforeSend: function () {
-            form.LoadingOverlay("show", {
-                image       : "",
-                fontawesomeColor: "#009FDA",
-                fontawesome : "fas fa-spinner fa-spin",
-                progress    : true
-            });
-        },
-
-        success: function(response) {
-
-            $('.modal').modal('hide');
-            table.DataTable().ajax.reload( null, false);
-
-            form.LoadingOverlay("hide")
-
-            const Toast = swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 10000
-            });
-
-            Toast.fire({
-                type: 'success',
-                title: response.message
-            });
-        },
-
-
-        error:function (xhr, ajaxOptions, thrownError){
-
-            clear_messages();
-
-            form.LoadingOverlay("hide")
-
-
-            toastr.clear()
-
-            toastr.options = {
-              "closeButton": true,
-              "debug": false,
-              "newestOnTop": true,
-              "progressBar": true,
-              "positionClass": "toast-top-right",
-              "preventDuplicates": true,
-              "onclick": null,
-              "showDuration": "1000",
-              "hideDuration": "1000",
-              "timeOut": "30000",
-              "extendedTimeOut": "1000",
-              "progressBar": true,
-              "showEasing": "swing",
-              "hideEasing": "linear",
-              "showMethod": "fadeIn",
-              "hideMethod": "fadeOut"
-          }
-          if (xhr.responseJSON.errors) {
-            $.each(xhr.responseJSON.errors, function(key, value){
-                toastr["error"](value)
-            });
-            return false;
-        }
+            $(array).each(function(i, field){
+              dataObj[field.name] = field.value;
+          });
 
 
 
-        const Toast = swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 10000
-        });
+            data = new FormData();
+            data.append('id', dataObj['id']);
+            data.append('name', dataObj['name']);
+            data.append('apellidos', dataObj['apellidos']);
+            data.append('email', dataObj['email']);
+            data.append('username', dataObj['username']);
+            data.append('phone', dataObj['phone']);
+            if(dataObj['password'].length){
+                data.append('password', dataObj['password']);
 
-        switch (xhr.status) {
-            case 404:
-            if (xhr.responseJSON.errors) {
-
-                $.each(xhr.responseJSON.errors, function(key, value){
-
-
-                    form.find('.modal-body .'+key+' ')
-                    .next('.error')
-                    .append('<strong style="display:block;" class="invalid-feedback">'+value+'</strong>')
-                    .show()
-                    ;
-                });
             }
 
-            Toast.fire({
-                type: 'error',
-                title: JSON.parse(xhr.responseText).message,
-            });
-            break
+            if(dataObj['password_confirmation'].length){
+                data.append('password_confirmation', dataObj['password_confirmation']);
+            }
 
-            case 500:
-            Toast.fire({
-                type: 'error',
-                title: JSON.parse(xhr.responseText).errors['errorInfo'][2]
-            });
+            data.append('rol', dataObj['rol']);
 
+            var select =  $('#select2').val()
+            if (select) {
+                data.append('plaza', select);
+            }
 
-            break
+            e.preventDefault();
 
-            return false;
-
-        }
-        if (response.message) {
-         Toast.fire({
-            type: 'error',
-            title: response.message
+            $.ajaxSetup({
+              headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
         });
-     }
+
+            $.ajax({
+                url: '{{route('users.update')}}',
+                data: data,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                type: 'POST',
+
+                beforeSend: function () {
+                    form.LoadingOverlay("show", {
+                        image       : "",
+                        fontawesomeColor: "#009FDA",
+                        fontawesome : "fas fa-spinner fa-spin",
+                        progress    : true
+                    });
+                },
+
+                success: function(response) {
+
+                    $('.modal').modal('hide');
+
+                    table.DataTable().ajax.reload( null, false);
+
+                    form.LoadingOverlay("hide")
+
+                    toastr.clear()
+                    toastr["success"](response.message)
+
+
+                },
+
+
+                error:function (xhr, ajaxOptions, thrownError){
+
+                    clear_messages();
+
+                    form.LoadingOverlay("hide")
+                    toastr.clear()
+
+                    if (xhr.responseJSON.errors) {
+                        $.each(xhr.responseJSON.errors, function(key, value){
+                            toastr["error"](value)
+                        });
+                        return false;
+                    }
+
+
+                    switch (xhr.status) {
+                        case 404:
+                        if (xhr.responseJSON.errors) {
+
+                            $.each(xhr.responseJSON.errors, function(key, value){
+
+                                form.find('.modal-body .'+key+' ')
+                                .next('.error')
+                                .append('<strong style="display:block;" class="invalid-feedback">'+value+'</strong>')
+                                .show()
+                                ;
+                            });
+                        }
+
+                        toastr["error"](JSON.parse(xhr.responseText).message)
+
+                        break
+
+                        case 500:
+                        toastr["error"]( JSON.parse(xhr.responseText).errors['errorInfo'][2] )
+
+                        break
+
+                        return false;
+
+                    }
+                    if (response.message) {
+                        toastr["error"](response.message)
+                    }
 
 
 
- }
-});
+                }
+            });
 
     })//edit modal
 
@@ -691,16 +587,16 @@ $("#formEdit").on("submit", function(e){
 
 
 
-$('#EditModal').on('hidden.bs.modal', function (event) {
-    var form =  $("#formEdit")
-    form.find('.invalid-feedback').each(function(){
-        $(this).remove()
+        $('#EditModal').on('hidden.bs.modal', function (event) {
+            var form =  $("#formEdit")
+            form.find('.invalid-feedback').each(function(){
+                $(this).remove()
 
-    })
-    document.getElementById('formEdit').reset();
-})
+            })
+            document.getElementById('formEdit').reset();
+        })
 
-$('#rol').on('change', function() {
+        $('#rol').on('change', function() {
     if (this.value == 1) {//si es admin tiene todas las plazas por defecto
         $(".select").prop("disabled", true);
         $('.select').prop('required',false);
@@ -713,7 +609,7 @@ $('#rol').on('change', function() {
 });
 
 
-$('.rol').on('change', function() {
+        $('.rol').on('change', function() {
     if (this.value == 1) {//si es admin tiene todas las plazas por defecto
         $(".select2").prop("disabled", true);
         $('.select2').prop('required',false);
@@ -729,23 +625,23 @@ $('.rol').on('change', function() {
 
 
 
-$('.select2').select2({
-    width: '100%',
-    placeholder:'Selecciona una opción',
-    dropdownParent:$('#EditModal')
-});
+        $('.select2').select2({
+            width: '100%',
+            placeholder:'Selecciona una opción',
+            dropdownParent:$('#EditModal')
+        });
 
-$('.select').select2({
-    width: '100%',
-    placeholder:'Selecciona una opción',
-    dropdownParent:$('#addModal')
-});
-
-
+        $('.select').select2({
+            width: '100%',
+            placeholder:'Selecciona una opción',
+            dropdownParent:$('#addModal')
+        });
 
 
 
-})
+
+
+    })
 </script>
 
 

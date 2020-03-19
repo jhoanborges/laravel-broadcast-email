@@ -1,0 +1,145 @@
+
+.black{
+    color: var(--black)
+}
+.bg-black{
+    background-color: var(--black)
+}
+.orange{
+    color: var(--orange)
+}
+.bg-orange{
+    background-color: var(--orange)
+}
+.white{
+    color: var(--white)
+}
+.bg-white{
+    background-color: var(--white)
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: transparent;
+}
+
+.modal-content {
+    box-shadow: 0px 0px 00px 1500px #00000085;
+}
+/*
+nav.navbar{
+    background: var(--black);
+}
+*/
+nav.side-navbar {
+    background:  var(--white);
+}
+
+nav.side-navbar ul li.active > a {
+    background:  var(--orange);
+    color: #fff;
+    border-left: 4px solid var(--red-orange);
+}
+nav.side-navbar ul li.active > a:hover {
+    background: var(--orange);
+}
+nav.side-navbar ul li a:hover {
+    background:  var(--orange);
+    color: #fff;
+    border-left: 4px solid var(--red-orange);
+}
+
+.content-inner {
+    background: var(--white);
+}
+
+
+.btn.btn-primary {
+    background: var(--orange);
+    border: 1px solid var(--orange);
+    color: #fff;
+}
+.btn.btn-primary:hover {
+    border: 1px solid  var(--red-orange);
+    background:  var(--red-orange);
+    color:  #fff
+}
+.btn-primary .ink {
+  background-color: var(--orange);
+}
+.btn-primary .ink {
+  background-color: var(--red-orange);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color:  var(--orange);
+    border-color: var(--orange);
+}
+
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem var(--red-orange);
+    box-shadow: 0 0 0 0.2rem var(--red-orange);
+}
+
+.buttons-html5{
+    color: #fff;
+    background-color:  var(--orange);
+    border-color: var(--orange);
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: var(--orange);
+    border-color: var(--orange);
+}
+.page-link {
+    color:  var(--orange);
+}
+.page-link:hover {
+    color: var(--red-orange);
+}
+
+.page-link:focus {
+     color: var(--red-orange);
+}
+
+.fa-edit {
+color: var(--light-orange);
+}
+.fa-edit:hover {
+color: var(--orange);
+}
+
+.fa-trash-alt {
+color: var(--red);
+}
+
+.fa-trash-alt:hover {
+color: red
+}
+
+.toast-success {
+    background-color: var(--orange);
+}
+.toast-error {
+    background-color: var(--red);
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: var(--light-orange) !important;
+}
+.swal2-styled:focus {
+    outline: 0;
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px var(--orange) !important;
+}
+.swal2-styled.swal2-confirm:hover {
+    background-color:var(--orange);
+}
+
+.swal2-styled.swal2-cancel {
+    background-color:var(--red) !important;
+}
+.swal2-styled.swal2-cancel:hover {
+    background-color:red
+}

@@ -4,26 +4,20 @@
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Commerce Senter</title>
+    <title>Commerce e-hop</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
-    <!-- Google fonts - Poppins -->
-    <link rel="stylesheet" href="{{url('admin_assets/css/google-font.css')}}">
-
     <!-- Favicon-->
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
+
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/colors.css')}}">
+    <link rel="stylesheet" href="{{asset('admin_assets/css/skin.orange.css')}}">
 
-
-    <link rel="stylesheet"  id="theme-stylesheet" href="{{url('admin_assets/css/dataTables.bootstrap4.min.css')}}">
-    <link rel="stylesheet" href="{{url('admin_assets/css/select2.min.css')}}">
-    <link rel="stylesheet" href="{{url('admin_assets/css/toastr.min.css')}}">
-
-
+    {{--<link rel="stylesheet" href="{{asset('css/app.css')}}">--}}
+    <link rel="stylesheet" href="{{url('admin_assets/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin_assets/css/custom.css')}}">
-
 
     @yield('extra-css')
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -53,6 +47,7 @@
 
         <script src="{{url('admin_assets/js/select2.min.js')}}"></script>
         <script src="{{url('admin_assets/js/toastr.min.js')}}"></script>
+        <script src="{{url('admin_assets/js/toastr_options.js')}}"></script>
 
         <!--datatables buttons and print-->
         <script src="{{url('admin_assets/js/dataTables.buttons.min.js')}}"></script>
@@ -64,7 +59,7 @@
         <script src="{{url('admin_assets/js/buttons.print.min.js')}}"></script>
         <script src="{{url('admin_assets/js/sweetalert2@9.js')}}"></script>
 
-
+        @include('sweetalert::alert')
         @yield('extra-js')
     </body>
     </html>

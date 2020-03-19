@@ -24,16 +24,23 @@
             </a>
         </li>
 
-        <ul class="list-unstyled">
-            <li class="{{Route::currentRouteNamed('users.index') ? 'active' : '' }}">
-                <a href="{{route('users.index')}}">
-                    <i class="icon-home mr-3"></i>
-                    Home
-                </a>
-            </li>
+        <li class="{{Route::currentRouteNamed('orders.index') ? 'active' : '' }}">
+            <a href="{{route('orders.index')}}">
+                <i class="icon-home mr-3"></i>
+                Ordenes
+            </a>
+        </li>
+
+
+        <li class="{{Route::currentRouteNamed('users.index') ? 'active' : '' }}">
+            <a href="{{route('users.index')}}">
+                <i class="icon-home mr-3"></i>
+                Usuarios
+            </a>
+        </li>
 
 
 
 
 
-        </nav>
+    </nav>

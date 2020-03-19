@@ -9,7 +9,7 @@ use Validator;
 use App\Roles;
 use App\Notifications\UserSuccessfullyRegistered;
 use Notification;
-
+use Illuminate\Support\Str;
 
 class UsersController extends Controller
 {
@@ -27,29 +27,29 @@ class UsersController extends Controller
 
     public function get(Request $request)
     {
-       return datatables()->of(User::query() )
+     return datatables()->of(User::query() )
 
-       ->orderColumns(['id', 'name'], '-:column $1')
+     ->orderColumns(['id', 'name'], '-:column $1')
 
-       ->addColumn('rol', function (User $user) {
+     ->addColumn('rol', function (User $user) {
         return $user->roles->map(function($data) {
           return $data->id;
       });
     })
 
 
-       ->addColumn('role', function (User $user) {
+     ->addColumn('role', function (User $user) {
         return $user->roles->map(function($data) {
-          return str_limit($data->description, 30, '...');
+          return Str::limit($data->description, 30, '...');
       })->implode('<br>');
     })
-       ->toJson();
+     ->toJson();
 
-   }
+ }
 
 
-   public function store(Request $request)
-   {
+ public function store(Request $request)
+ {
 
     $validator = Validator::make($request->all(), [
         'name' => 'required|string|max:191',
@@ -59,6 +59,8 @@ class UsersController extends Controller
         'password' => 'required|min:8|max:191|confirmed',
         'password_confirmation' => 'required|min:8|max:191',
         'rol' => 'required|integer|between:1,3',
+        'phone' => 'required|string|max:191',
+
     ]);
 
 
@@ -88,6 +90,8 @@ class UsersController extends Controller
             'username'=>$request->username,
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
+            'phone'=>$request->phone,
+
         ]);
         $user->roles()->attach($rol);
 
@@ -131,6 +135,8 @@ public function update(Request $request)
             'password' => 'sometimes|min:8|max:191|confirmed',
             'password_confirmation' => 'sometimes|min:8|max:191',
             'rol' => 'required|integer|between:1,3',
+            'phone' => 'required|string|max:191',
+
 
         ]);
 
@@ -145,7 +151,7 @@ public function update(Request $request)
         }
 
 //valido manualmente que si el usuario no es admin entonces la variable plaza debe ser requerida ni modo que se guarde vacia
-
+/*
         if ($request->rol != 1 && !$request->has('plaza') ) {
             return response()
             ->json([
@@ -153,7 +159,7 @@ public function update(Request $request)
                 'message' => 'La plaza es requerida si el usuario es distinto al administrador',
             ],500);
         }
-
+*/
 
         try{
 
@@ -164,6 +170,8 @@ public function update(Request $request)
                 'username'=>$request->username,
                 'email'=>$request->email,
                 'password'=>bcrypt($request->password),
+                'phone'=>$request->phone,
+
             ]);
 
             $rol =Roles::where('id', $request->rol)->first();

@@ -12,19 +12,21 @@ const mix = require('laravel-mix');
  */
 
 mix.styles([
-    'public/vendor/bootstrap/css/bootstrap.css',
-    'public/vendor/font-awesome/css/all.min.css',
-    'public/css/fontastic.css',
-    'public/css/style.default.css',
+    'public/css/bootstrap.css',
+    'public/css/propeller.css',
+    'public/admin_assets/vendor/font-awesome/css/all.min.css',
+    'public/admin_assetscss/fontastic.css',
+    'public/admin_assets/css/style.default.css',
 ], 'public/css/all.css');
 
 mix.js([
     'public/js/jquery-3.4.1.min.js',
     'public/js/popper.min.js',
-    'public/vendor/bootstrap/js/bootstrap.js',
-    'public/vendor/chart.js/Chart.min.js',
+    'public/js/bootstrap.js',
+    'public/js/propeller.js',
+    //'public/admin_assets/vendor/chart.js/Chart.min.js',
     //'public/js/charts-home.js',
-    'public/js/front.js',
+    'public/admin_assets/js/front.js',
 ], 'public/js/all.js');
 
 
