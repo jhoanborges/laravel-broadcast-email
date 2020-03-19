@@ -23,22 +23,23 @@ $(document).ready(function () {
 
     // ------------------------------------------------------- //
     // Tooltips init
-    // ------------------------------------------------------ //    
+    // ------------------------------------------------------ //
 
-    $('[data-toggle="tooltip"]').tooltip()    
+    $('[data-toggle="tooltip"]').tooltip()
 
 
     // ------------------------------------------------------- //
     // Adding fade effect to dropdowns
     // ------------------------------------------------------ //
-    $('.dropdown').on('show.bs.dropdown', function () {
-        $(this).find('.dropdown-menu').first().stop(true, true).fadeIn();
+  $('.dropdown').on('show.bs.dropdown', function () {
+        $(this).find('.dropdown-menu').first().stop(true, true).toggle();
     });
+  /*
     $('.dropdown').on('hide.bs.dropdown', function () {
         $(this).find('.dropdown-menu').first().stop(true, true).fadeOut();
     });
 
-
+*/
     // ------------------------------------------------------- //
     // Sidebar Functionality
     // ------------------------------------------------------ //
@@ -69,7 +70,7 @@ $(document).ready(function () {
     // Universal Form Validation
     // ------------------------------------------------------ //
 
-    $('.form-validate').each(function() {  
+    $('.form-validate').each(function() {
         $(this).validate({
             errorElement: "div",
             errorClass: 'is-invalid',
@@ -81,14 +82,14 @@ $(document).ready(function () {
                 console.log(element);
                 if (element.prop("type") === "checkbox") {
                     error.insertAfter(element.siblings("label"));
-                } 
+                }
                 else {
                     error.insertAfter(element);
                 }
             }
         });
 
-    });    
+    });
 
     // ------------------------------------------------------- //
     // Material Inputs
@@ -116,8 +117,8 @@ $(document).ready(function () {
     });
 
     // ------------------------------------------------------- //
-    // Footer 
-    // ------------------------------------------------------ //   
+    // Footer
+    // ------------------------------------------------------ //
 
     var contentInner = $('.content-inner');
 
@@ -146,10 +147,13 @@ $(document).ready(function () {
     // ------------------------------------------------------ //
     // For demo purposes, can be deleted
     // ------------------------------------------------------ //
+    //
 
+    /*
     var stylesheet = $('link#theme-stylesheet');
     $("<link id='new-stylesheet' rel='stylesheet'>").insertAfter(stylesheet);
     var alternateColour = $('link#new-stylesheet');
+
 
     if ($.cookie("theme_csspath")) {
         alternateColour.attr("href", $.cookie("theme_csspath"));
@@ -171,6 +175,6 @@ $(document).ready(function () {
         }
 
         return false;
-    });
+    });*/
 
 });

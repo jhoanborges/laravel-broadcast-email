@@ -13417,18 +13417,21 @@ $(document).ready(function () {
     $(this).parents('.card').fadeOut();
   }); // ------------------------------------------------------- //
   // Tooltips init
-  // ------------------------------------------------------ //    
+  // ------------------------------------------------------ //
 
   $('[data-toggle="tooltip"]').tooltip(); // ------------------------------------------------------- //
   // Adding fade effect to dropdowns
   // ------------------------------------------------------ //
 
   $('.dropdown').on('show.bs.dropdown', function () {
-    $(this).find('.dropdown-menu').first().stop(true, true).fadeIn();
+    $(this).find('.dropdown-menu').first().stop(true, true).toggle();
   });
-  $('.dropdown').on('hide.bs.dropdown', function () {
-    $(this).find('.dropdown-menu').first().stop(true, true).fadeOut();
-  }); // ------------------------------------------------------- //
+  /*
+    $('.dropdown').on('hide.bs.dropdown', function () {
+        $(this).find('.dropdown-menu').first().stop(true, true).fadeOut();
+    });
+  */
+  // ------------------------------------------------------- //
   // Sidebar Functionality
   // ------------------------------------------------------ //
 
@@ -13497,8 +13500,8 @@ $(document).ready(function () {
       $(this).siblings('.label-material').removeClass('active');
     }
   }); // ------------------------------------------------------- //
-  // Footer 
-  // ------------------------------------------------------ //   
+  // Footer
+  // ------------------------------------------------------ //
 
   var contentInner = $('.content-inner');
   $(document).on('sidebarChanged', function () {
@@ -13522,27 +13525,26 @@ $(document).ready(function () {
   }); // ------------------------------------------------------ //
   // For demo purposes, can be deleted
   // ------------------------------------------------------ //
+  //
 
+  /*
   var stylesheet = $('link#theme-stylesheet');
   $("<link id='new-stylesheet' rel='stylesheet'>").insertAfter(stylesheet);
   var alternateColour = $('link#new-stylesheet');
-
-  if ($.cookie("theme_csspath")) {
-    alternateColour.attr("href", $.cookie("theme_csspath"));
+    if ($.cookie("theme_csspath")) {
+      alternateColour.attr("href", $.cookie("theme_csspath"));
   }
-
-  $("#colour").change(function () {
-    if ($(this).val() !== '') {
-      var theme_csspath = 'css/style.' + $(this).val() + '.css';
-      alternateColour.attr("href", theme_csspath);
-      $.cookie("theme_csspath", theme_csspath, {
-        expires: 365,
-        path: document.URL.substr(0, document.URL.lastIndexOf('/'))
-      });
-    }
-
-    return false;
-  });
+   $("#colour").change(function () {
+       if ($(this).val() !== '') {
+           var theme_csspath = 'css/style.' + $(this).val() + '.css';
+           alternateColour.attr("href", theme_csspath);
+           $.cookie("theme_csspath", theme_csspath, {
+              expires: 365,
+              path: document.URL.substr(0, document.URL.lastIndexOf('/'))
+          });
+       }
+       return false;
+  });*/
 });
 
 /***/ }),
