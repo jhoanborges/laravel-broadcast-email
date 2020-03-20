@@ -52,6 +52,13 @@ class User extends Authenticatable
         ->withTimestamps();
     }
 
+        public function address()
+    {
+        return $this->belongsToMany('App\Address');
+    }
+
+
+
     public function hasRole($role)
     {
         //aca tambien podria ser user_id si se trabaja con id

@@ -37,5 +37,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/clients.update', 'ClientsController@update')->name('clients.update');
     Route::post('/clients.delete', 'ClientsController@destroy')->name('clients.delete');
 
+    Route::get('/admin/direcciones', 'AddressController@index')->name('address.index');
+    Route::post('/address.get', 'AddressController@get')->name('address.get');
+    Route::post('/address.add', 'AddressController@store')->name('address.add');
+    Route::post('/address.update', 'AddressController@update')->name('address.update');
+    Route::post('/address.delete', 'AddressController@destroy')->name('address.delete');
+
+
+
 
 });

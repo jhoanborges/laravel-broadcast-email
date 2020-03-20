@@ -90,6 +90,51 @@
 </div>
 
 
+
+
+<div class="row">
+
+
+<div class="col">
+   <label for="company">Empresa:</label>
+   <input name="company" type="text" class="form-control company"  maxlength="191">
+   <span class="error" role="alert"> </span>
+</div>
+
+     <div class="col">
+         <label for="store_url">URL de tienda:</label>
+         <input name="store_url" type="text" class="form-control company"  maxlength="191">
+         <span class="error" role="alert"> </span>
+     </div>
+
+</div>
+
+
+ <div class="row">
+
+
+     <div class="col">
+         <label for="commission">Comisión:</label>
+         <input name="commission" type="number" min="1" max="100" class="form-control commission"   maxlength="191">
+         <span class="error" role="alert"> </span>
+     </div>
+
+    <div class="col">
+      <label for="status" class="required">Estatus</label>
+      <select required class="form-control status"  name="status">
+          <option disabled selected value="">Seleccione una opción</option>
+          <option value="1">Activo</option>
+          <option value="2">Inactivo</option>
+
+      </select>
+      <span class="error" role="alert"> </span>
+  </div>
+
+</div>
+
+
+
+
 <div class="modal-footer">
     <button type="button" class="btn  pmd-btn-raised pmd-ripple-effect btn-secondary" data-dismiss="modal">Cerrar</button>
     <button type="submit" class="btn  pmd-btn-raised pmd-ripple-effect btn-primary">Guardar</button>

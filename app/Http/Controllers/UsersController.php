@@ -91,7 +91,7 @@ class UsersController extends Controller
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
             'phone'=>$request->phone,
-                        'company'=>$request->company,
+            'company'=>$request->company,
             'store_url'=>$request->store_url,
             'commission'=>$request->commission,
             'status'=>$request->status,
@@ -134,15 +134,17 @@ public function update(Request $request)
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:191',
-            'apellidos' => 'required|string|max:191',
+            'lastname' => 'required|string|max:191',
             'username' => 'sometimes|string|max:191',
             'email' => 'required|email|max:191|unique:users,email,'.$request->id,
             'password' => 'sometimes|min:8|max:191|confirmed',
             'password_confirmation' => 'sometimes|min:8|max:191',
             'rol' => 'required|integer|between:1,3',
             'phone' => 'required|string|max:191',
-
-
+            'company' => 'required|string|max:191',
+            'store_url' => 'required|string',
+            'commission' => 'required|integer|between:1,100',
+            'status' => 'required|integer|between:1,2',
         ]);
 
 
@@ -155,27 +157,21 @@ public function update(Request $request)
             ],404);
         }
 
-//valido manualmente que si el usuario no es admin entonces la variable plaza debe ser requerida ni modo que se guarde vacia
-/*
-        if ($request->rol != 1 && !$request->has('plaza') ) {
-            return response()
-            ->json([
-                'success' => false,
-                'message' => 'La plaza es requerida si el usuario es distinto al administrador',
-            ],500);
-        }
-*/
-
         try{
 
 
             $data->update([
                 'name' => $request->name,
-                'apellidos'=>$request->apellidos,
+                'lastname'=>$request->lastname,
                 'username'=>$request->username,
                 'email'=>$request->email,
                 'password'=>bcrypt($request->password),
                 'phone'=>$request->phone,
+                'company'=>$request->company,
+                'store_url'=>$request->store_url,
+                'commission'=>$request->commission,
+                'status'=>$request->status,
+
 
             ]);
 

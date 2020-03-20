@@ -3,8 +3,8 @@
 
 <section class="dashboard-counts no-padding-bottom">
     <div class="container-fluid dash-content d-flex">
-        <h1  class="darkblue  mt-1">Usuarios</h1>
-        <button class="btn btn-primary custom-secondary ml-4 pointer"
+        <h1  class="darkblue  mt-1">Mis direcciones</h1>
+        <button class="btn  pmd-btn-raised pmd-ripple-effect btn-primary custom-secondary ml-4 pointer"
         data-toggle="modal" data-target="#addModal"
         >Crear</button>
 
@@ -29,8 +29,11 @@
                                 <th>#</th>
                                 <th>Nombre</th>
                                 <th>Email</th>
-                                <th>Rol</th>
                                 <th>Teléfono</th>
+                                <th>Dirección</th>
+                                <th>Código Postal</th>
+                                <th>País</th>
+                                <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -46,16 +49,10 @@
 </section>
 
 
-
-
-@include('modals.AddUser')
-@include('modals.EditUser')
-
-
+@include('modals.AddAddress')
+@include('modals.EditAddress')
 
 @section('extra-js')
-
-
 
 
 <script>
@@ -68,7 +65,7 @@
     });
         var table =   $('#myTable')
         .on('processing.dt', function (e, settings, processing) {
-           if (processing) {
+         if (processing) {
             $('.page').LoadingOverlay("show", {
                 image       : "",
                 fontawesomeColor: "#009FDA",
@@ -103,7 +100,7 @@ buttons: [
 
 
 ajax: {
-    url: '{{route('users.get')}}',
+    url: '{{route('address.get')}}',
     type: 'POST',
     dataType : 'json',
   /*
@@ -123,30 +120,16 @@ ajax: {
 {"data": "id"},
 
 {  "render" : function (data, type, row) {
-    return row.name + row.lastname;
+    return row.name + ' ' +(row.lastname ? row.lastname : '');
 },
 },
 
-{"data": "email"},
-{"data": "role" },
+{"data": "email" },
 {"data": "phone" },
-
-/*
-{  "render" : function (data, type, row) {
-
-    if (row.role ==true) {
-        return '<a class="pointer" data-toggle="tooltip" data-placement="right" title="Activo">\
-        <i class="far fa-check-circle fa-2x" style="color: #009FDA;"></i>\
-        </a>';
-    }else{
-      return '<a class="pointer"  data-toggle="tooltip" data-placement="left" title="Inactivo">\
-      <i class="far fa-times-circle fa-2x" style="color: red;"></i>\
-      </a>';
-  }
-},
-},
-*/
-
+{"data": "address" },
+{"data": "postal_code" },
+{"data": "country_relation" },
+{"data": "estate_relation" },
 
 ],
 
@@ -154,26 +137,25 @@ ajax: {
 "columnDefs": [
 //esto  para el color de las filas queria algo mas oscuro
 {
-    "targets":4,
+    "targets":8,
     className: 'dt-body-center'
 },
 
 {
-    "targets":5,
+    "targets":8,
     className: 'dt-body-center',
     "render": function ( data, type, row, meta ) {
         return ' <a class="pointer mr-2" data-toggle="modal" data-target="#EditModal" \
         data-id="'+row.id+'"\
         data-name="'+row.name+'"\
         data-lastname="'+row.lastname+'"\
+        data-apellidos="'+row.address+'"\
         data-email="'+row.email+'"\
-        data-username="'+row.username+'"\
-        data-rol="'+row.rol+'"\
         data-phone="'+row.phone+'"\
-        data-company="'+row.company+'"\
-        data-store_url="'+row.store_url+'"\
-        data-commission="'+row.commission+'"\
-        data-status="'+row.status+'"\
+        data-country="'+row.country+'"\
+        data-estate="'+row.estate+'"\
+        data-postal_code="'+row.postal_code+'"\
+        data-address="'+row.address+'"\
         >\
         <i class="fas fa-edit fa-2x" style=""></i>\
         </a>\
@@ -206,6 +188,8 @@ ajax: {
 });
     $('#myTable_filter input').addClass('form-control custom-search'); // <-- add this line
     $('#myTable_length select').addClass('form-control custom-select'); // <-- add this line
+    $('.dt-button').addClass('pmd-btn-raised pmd-ripple-effect'); // <-- add this line
+
     setInterval( function () {
     table.ajax.reload( null, false ); // user paging is not reset on reload
 }, 300000 );
@@ -229,31 +213,25 @@ ajax: {
       var id = button.data('id')
       var name = button.data('name')
       var lastname = button.data('lastname')
-      var rol = button.data('rol')
-      var username = button.data('username')
-      var email = button.data('email')
-      var plazas = button.data('plazas')
       var phone = button.data('phone')
-
-      var company = button.data('company')
-      var store_url = button.data('store_url')
-      var commission = button.data('commission')
-      var status = button.data('status')
+      var email = button.data('email')
+      var country = button.data('country')
+      var estate = button.data('estate')
+      var address = button.data('address')
+      var postal_code = button.data('postal_code')
 
 
       modal.find('.modal-body .name').val(name)
-      modal.find('.modal-body .id').val(id)
-      modal.find('.modal-body .rol').val(rol).change()
       modal.find('.modal-body .lastname').val(lastname)
-      modal.find('.modal-body .email').val(email)
-      modal.find('.modal-body .username').val(username)
+      modal.find('.modal-body .id').val(id)
+      modal.find('.modal-body .status').val(status).change()
+      modal.find('.modal-body .address').val(address)
       modal.find('.modal-body .phone').val(phone)
-
-      modal.find('.modal-body .company').val(company)
-      modal.find('.modal-body .store_url').val(store_url)
-      modal.find('.modal-body .commission').val(commission)
-      modal.find('.modal-body .status').val(status)
-
+      modal.find('.modal-body .email').val(email)
+      modal.find('.modal-body .country').val(country)
+      modal.find('.modal-body .estate').val(estate)
+      modal.find('.modal-body .address').val(address)
+      modal.find('.modal-body .postal_code').val(postal_code)
 
 
   })
@@ -264,69 +242,69 @@ ajax: {
 
 <script>
     function deleteNoty(id){
-       Swal.fire({
-          title: '¿Está seguro de eliminar este registro?',
-          text: "No serás capaz de recuperarlo nuevamente",
-          type: 'warning',
-          showCancelButton: true,
-          cancelButtonText: 'Cancelar',
-          confirmButtonText: 'Borrar'
-      }).then((result) => {
-          if (result.value) {
+     Swal.fire({
+      title: '¿Está seguro de eliminar este registro?',
+      text: "No serás capaz de recuperarlo nuevamente",
+      type: 'warning',
+      showCancelButton: true,
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Borrar'
+  }).then((result) => {
+      if (result.value) {
 
-            var table = $('#myTable');
-            var page = $('.page');
+        var table = $('#myTable');
+        var page = $('.page');
 
-            var data = new FormData();
-            data.append('id', id);
+        var data = new FormData();
+        data.append('id', id);
 
-            $.ajax({
-                url: "{{ route('users.delete') }}",
-                data: data,
-                enctype: 'multipart/form-data',
-                processData: false,
-                contentType: false,
-                type: 'POST',
+        $.ajax({
+            url: "{{ route('address.delete') }}",
+            data: data,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            type: 'POST',
 
-                beforeSend: function () {
-                    page.LoadingOverlay("show", {
-                        image       : "",
-                        fontawesomeColor: "#009FDA",
-                        fontawesome : "fas fa-spinner fa-spin",
-                        progress    : true
-                    });
-                },
+            beforeSend: function () {
+                page.LoadingOverlay("show", {
+                    image       : "",
+                    fontawesomeColor: "#009FDA",
+                    fontawesome : "fas fa-spinner fa-spin",
+                    progress    : true
+                });
+            },
 
-                success: function(response) {
-                    table.DataTable().ajax.reload( null, false);
-                    page.LoadingOverlay("hide")
-                    toastr["success"](response.message)
-
-
-
-                },
-
-
-                error:function (xhr, ajaxOptions, thrownError){
-                    page.LoadingOverlay("hide")
-
-                    switch (xhr.status) {
-                        case 404:
-                        toastr["error"](JSON.parse(xhr.responseText).message)
-
-                        return false;
-                    }
-
-                    toastr["error"](response.message)
+            success: function(response) {
+                table.DataTable().ajax.reload( null, false);
+                page.LoadingOverlay("hide")
+                toastr["success"](response.message)
 
 
 
+            },
+
+
+            error:function (xhr, ajaxOptions, thrownError){
+                page.LoadingOverlay("hide")
+
+                switch (xhr.status) {
+                    case 404:
+                    toastr["error"](JSON.parse(xhr.responseText).message)
+
+                    return false;
                 }
-            });
 
-        }
-    })
-  }
+                toastr["error"](response.message)
+
+
+
+            }
+        });
+
+    }
+})
+}
 
 </script>
 
@@ -366,24 +344,11 @@ ajax: {
             data.append('name', dataObj['name']);
             data.append('lastname', dataObj['lastname']);
             data.append('email', dataObj['email']);
-            data.append('username', dataObj['username']);
-            data.append('password', dataObj['password']);
-            data.append('password_confirmation', dataObj['password_confirmation']);
-            data.append('rol', dataObj['rol']);
             data.append('phone', dataObj['phone']);
-
-            data.append('company', dataObj['company']);
-            data.append('status', dataObj['status']);
-            data.append('store_url', dataObj['store_url']);
-            data.append('commission', dataObj['commission']);
-
-
-
-            var select =  $('.select').val()
-            if (select) {
-                data.append('plaza', select);
-            }
-
+            data.append('address', dataObj['address']);
+            data.append('postal_code', dataObj['postal_code']);
+            data.append('country', dataObj['country']);
+            data.append('estate', dataObj['estate']);
 
             e.preventDefault();
 
@@ -394,7 +359,7 @@ ajax: {
         });
 
             $.ajax({
-                url: '{{route('users.add')}}',
+                url: '{{route('address.add')}}',
                 data: data,
                 enctype: 'multipart/form-data',
                 processData: false,
@@ -487,30 +452,11 @@ ajax: {
             data.append('name', dataObj['name']);
             data.append('lastname', dataObj['lastname']);
             data.append('email', dataObj['email']);
-            data.append('username', dataObj['username']);
             data.append('phone', dataObj['phone']);
-            if(dataObj['password'].length){
-                data.append('password', dataObj['password']);
-
-            }
-
-            if(dataObj['password_confirmation'].length){
-                data.append('password_confirmation', dataObj['password_confirmation']);
-            }
-
-            data.append('rol', dataObj['rol']);
-
-            var select =  $('#select2').val()
-            if (select) {
-                data.append('plaza', select);
-            }
-
-            data.append('company', dataObj['company']);
-            data.append('status', dataObj['status']);
-            data.append('store_url', dataObj['store_url']);
-            data.append('commission', dataObj['commission']);
-
-
+            data.append('address', dataObj['address']);
+            data.append('postal_code', dataObj['postal_code']);
+            data.append('country', dataObj['country']);
+            data.append('estate', dataObj['estate']);
 
             e.preventDefault();
 
@@ -521,7 +467,7 @@ ajax: {
         });
 
             $.ajax({
-                url: '{{route('users.update')}}',
+                url: '{{route('address.update')}}',
                 data: data,
                 enctype: 'multipart/form-data',
                 processData: false,

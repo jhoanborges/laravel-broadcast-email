@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\User;
 use App\Roles;
+use App\Address;
 
 class UsersTableSeeder extends Seeder
 {
@@ -21,12 +22,11 @@ class UsersTableSeeder extends Seeder
 
       //$plaza1 = Plazas::find(1);
 
-
       $user = User::create([
-        'name' => 'SOFT',
-        'lastname'=> 'DEPOT',
+        'name' => 'Jhoan',
+        'lastname'=> 'Borges',
         'username'=>'admin',
-        'email'=>'admin@senter.mx',
+        'email'=>'admin@e-hop.mx',
         'company'=>'Test Company',
         'phone'=>'12345678',
         'store_url'=>'https://0589f4b953366318ee10464adc336433:0669a1f7f11355b2c7e02ed28ce2fcd5@senter-test.myshopify.com/admin/',
@@ -37,8 +37,8 @@ class UsersTableSeeder extends Seeder
 
 
       $user = User::create([
-        'name' => 'SOFT',
-        'lastname'=> 'DEPOT',
+        'name' => 'Ejecutivo',
+        'lastname'=> 'de ventas',
         'username'=>'Sales',
         'email'=>'ejecutivo@senter.mx',
         'company'=>'Test Company',
@@ -54,7 +54,7 @@ class UsersTableSeeder extends Seeder
 
 
 
-      for ($i=1; $i < 50; $i++) {
+      for ($i=1; $i < 10; $i++) {
 
         $faker = Faker\Factory::create();
 
