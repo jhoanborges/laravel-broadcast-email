@@ -36,7 +36,7 @@
             </div>
         </div>
         <!-- JavaScript files-->
-
+        @routes
         <script src="{{asset('js/app.js')}}"></script>
 
         <script src="{{asset('js/all.js')}}"></script>
@@ -60,6 +60,7 @@
         <script src="{{asset('admin_assets/js/sweetalert2@9.js')}}"></script>
 
         @include('sweetalert::alert')
+        
         @yield('extra-js')
     </body>
     </html>

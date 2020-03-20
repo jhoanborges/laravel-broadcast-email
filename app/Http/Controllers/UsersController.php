@@ -27,6 +27,8 @@ class UsersController extends Controller
 
     public function get(Request $request)
     {
+        return User::paginate(env('PAGINATION'));
+
      return datatables()->of(User::query() )
 
      ->orderColumns(['id', 'name'], '-:column $1')
