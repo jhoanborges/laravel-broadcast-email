@@ -19,7 +19,7 @@
 
         <div class="col-lg-12">
           <div class="card">
-            <div id="table-component"></div>
+            <div id="table"></div>
 
 {{--
               <div class="card-body">
