@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
     <link rel="stylesheet" href="{{asset('css/colors.css')}}">
+    <link rel="stylesheet" href="{{asset('admin_assets/css/toastr.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin_assets/css/skin.orange.css')}}">
 
     {{--<link rel="stylesheet" href="{{asset('css/app.css')}}">--}}
