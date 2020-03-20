@@ -22,7 +22,7 @@ mix.styles([
 mix.js([
     'public/js/jquery-3.4.1.min.js',
     'public/js/popper.min.js',
-    'public/js/bootstrap.js',
+    //'public/js/bootstrap.js',
     'public/js/propeller.js',
     //'public/admin_assets/vendor/chart.js/Chart.min.js',
     //'public/js/charts-home.js',

@@ -123,7 +123,7 @@ ajax: {
 {"data": "id"},
 
 {  "render" : function (data, type, row) {
-    return row.name + row.apellidos;
+    return row.name + row.lastname;
 },
 },
 
@@ -165,7 +165,7 @@ ajax: {
         return ' <a class="pointer mr-2" data-toggle="modal" data-target="#EditModal" \
         data-id="'+row.id+'"\
         data-name="'+row.name+'"\
-        data-apellidos="'+row.apellidos+'"\
+        data-lastname="'+row.lastname+'"\
         data-email="'+row.email+'"\
         data-username="'+row.username+'"\
         data-rol="'+row.rol+'"\
@@ -225,7 +225,7 @@ ajax: {
 
       var id = button.data('id')
       var name = button.data('name')
-      var apellidos = button.data('apellidos')
+      var lastname = button.data('lastname')
       var rol = button.data('rol')
       var username = button.data('username')
       var email = button.data('email')
@@ -236,7 +236,7 @@ ajax: {
       modal.find('.modal-body .name').val(name)
       modal.find('.modal-body .id').val(id)
       modal.find('.modal-body .rol').val(rol).change()
-      modal.find('.modal-body .apellidos').val(apellidos)
+      modal.find('.modal-body .lastname').val(lastname)
       modal.find('.modal-body .email').val(email)
       modal.find('.modal-body .username').val(username)
       modal.find('.modal-body .phone').val(phone)
@@ -352,13 +352,20 @@ ajax: {
 
             data = new FormData();
             data.append('name', dataObj['name']);
-            data.append('apellidos', dataObj['apellidos']);
+            data.append('lastname', dataObj['lastname']);
             data.append('email', dataObj['email']);
             data.append('username', dataObj['username']);
             data.append('password', dataObj['password']);
             data.append('password_confirmation', dataObj['password_confirmation']);
             data.append('rol', dataObj['rol']);
             data.append('phone', dataObj['phone']);
+
+            data.append('company', dataObj['company']);
+            data.append('status', dataObj['status']);
+            data.append('phone', dataObj['phone']);
+            data.append('store_url', dataObj['store_url']);
+            data.append('commission', dataObj['commission']);
+
 
 
             var select =  $('.select').val()
@@ -467,7 +474,7 @@ ajax: {
             data = new FormData();
             data.append('id', dataObj['id']);
             data.append('name', dataObj['name']);
-            data.append('apellidos', dataObj['apellidos']);
+            data.append('lastname', dataObj['lastname']);
             data.append('email', dataObj['email']);
             data.append('username', dataObj['username']);
             data.append('phone', dataObj['phone']);
@@ -486,6 +493,13 @@ ajax: {
             if (select) {
                 data.append('plaza', select);
             }
+
+            data.append('company', dataObj['company']);
+            data.append('status', dataObj['status']);
+            data.append('phone', dataObj['phone']);
+            data.append('store_url', dataObj['store_url']);
+            data.append('commission', dataObj['commission']);
+
 
             e.preventDefault();
 

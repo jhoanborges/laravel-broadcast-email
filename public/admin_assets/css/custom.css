@@ -28,3 +28,23 @@ div.dataTables_wrapper div.dataTables_filter input {
 .dt-buttons{
         margin-bottom: 2rem;
 }
+
+nav.side-navbar a[data-toggle="collapse"]::before {
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+
+nav.side-navbar a[aria-expanded="true"]::before {
+    content: '\f106';
+        font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.btn-secondary{
+    color: #fff;
+}
+.btn-secondary:hover {
+    color: #fff;
+}

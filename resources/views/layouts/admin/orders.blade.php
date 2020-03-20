@@ -21,25 +21,25 @@
           <div class="card">
             <div id="table"></div>
 
-{{--
               <div class="card-body">
                 <div class="table-responsive">
                     <table id="myTable" class="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nombre</th>
-                                <th>Email</th>
-                                <th>Rol</th>
-                                <th>Teléfono</th>
-                                <th>Acciones</th>
+                                <th>Orden</th>
+                                <th>Fecha</th>
+                                <th>Senter</th>
+                                <th>Cliente</th>
+                                <th>Artículo</th>
+                                <th>Precio</th>
+                                <th>Pago</th>
+                                <th>Etiqueta</th>
                             </tr>
                         </thead>
                     </table>
                 </div>
             </div>
-
---}}
 
         </div>
     </div>

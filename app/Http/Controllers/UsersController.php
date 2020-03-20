@@ -54,13 +54,19 @@ class UsersController extends Controller
 
     $validator = Validator::make($request->all(), [
         'name' => 'required|string|max:191',
-        'apellidos' => 'required|string|max:191',
+        'lastname' => 'required|string|max:191',
         'username' => 'sometimes|string|max:191|unique:users',
         'email' => 'required|email|max:191|unique:users',
         'password' => 'required|min:8|max:191|confirmed',
         'password_confirmation' => 'required|min:8|max:191',
         'rol' => 'required|integer|between:1,3',
         'phone' => 'required|string|max:191',
+
+        'company' => 'required|string|max:191',
+        'store_url' => 'required|string',
+        'commission' => 'required|integer|between:1,100',
+        'status' => 'required|integer|between:1,2',
+
 
     ]);
 
@@ -74,29 +80,27 @@ class UsersController extends Controller
         ],404);
     }
 
-    if ($request->rol != 1 && !$request->has('plaza') ) {
-        return response()
-        ->json([
-            'success' => false,
-            'message' => 'La plaza es requerida si el usuario es distinto al administrador',
-        ],500);
-    }
     try{
 
         $rol =Roles::where('id', $request->rol)->first();
 
         $user = User::create([
             'name' => $request->name,
-            'apellidos'=>$request->apellidos,
+            'lastname'=>$request->lastname,
             'username'=>$request->username,
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
             'phone'=>$request->phone,
+                        'company'=>$request->company,
+            'store_url'=>$request->store_url,
+            'commission'=>$request->commission,
+            'status'=>$request->status,
+
 
         ]);
         $user->roles()->attach($rol);
 
-        Notification::route('mail', $user->email)->notify(new UserSuccessfullyRegistered($request->all()));
+        //Notification::route('mail', $user->email)->notify(new UserSuccessfullyRegistered($request->all()));
 
         return response()
         ->json([

@@ -40,7 +40,15 @@
         </li>
 
 
+        <li>
+            <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse" >
+                <i class="icon-interface-windows"></i>Clientes</a>
+                <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                    <li><a href="{{ route('clients.index') }}">Plataforma</a></li>
+                </ul>
+            </li>
 
 
+        </ul>
 
     </nav>

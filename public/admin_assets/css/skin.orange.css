@@ -1,3 +1,10 @@
+a {
+    color: var(--orange);
+}
+
+a:focus, a:hover {
+    color:  var(--red-orange)
+}
 
 .black{
     color: var(--black)
@@ -142,4 +149,8 @@ color: red
 }
 .swal2-styled.swal2-cancel:hover {
     background-color:red
+}
+
+.form-control:focus {
+    border-color:var(--light-orange);
 }

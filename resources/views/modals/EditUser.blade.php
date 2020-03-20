@@ -24,8 +24,8 @@
        </div>
 
        <div class="col">
-           <label for="apellidos" class="required">Apellidos:</label>
-           <input name="apellidos" type="text" class="form-control apellidos"  required  maxlength="191">
+           <label for="lastname" class="required">Apellidos:</label>
+           <input name="lastname" type="text" class="form-control lastname"  required  maxlength="191">
            <span class="error" role="alert"> </span>
        </div>
 
@@ -75,7 +75,7 @@
           <option disabled selected value="">Seleccione una opción</option>
           <option value="1">Administrador</option>
           <option value="2">Ejecutivo</option>
-          <option value="3">Sales</option>
+          <option value="3">Cliente de la plataforma</option>
       </select>
       <span class="error" role="alert"> </span>
   </div>
@@ -91,8 +91,8 @@
 
 
 <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn  pmd-btn-raised pmd-ripple-effect btn-secondary" data-dismiss="modal">Cerrar</button>
+    <button type="submit" class="btn  pmd-btn-raised pmd-ripple-effect btn-primary">Guardar</button>
 </div>
 </div>
 </form>

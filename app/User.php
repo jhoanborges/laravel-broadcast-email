@@ -13,7 +13,7 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $guarded = ['id'];
-    protected $fillable = ['name', 'apellidos', 'username','email', 'password'];
+    protected $fillable = ['name', 'lastname', 'username','email', 'password', 'company','phone','store_url','commission','status'];
 
     /**
      * The attributes that should be hidden for arrays.

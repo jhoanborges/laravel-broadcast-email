@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
 
       $admin =            Roles::where('name', 'admin')->first();
       $ejecutivo =         Roles::where('name', 'ejecutivo')->first();
-      $sales =         Roles::where('name', 'sales')->first();
+      $cliente =         Roles::where('name', 'cliente')->first();
 
 
       //$plaza1 = Plazas::find(1);
@@ -24,9 +24,12 @@ class UsersTableSeeder extends Seeder
 
       $user = User::create([
         'name' => 'SOFT',
-        'apellidos'=> 'DEPOT',
+        'lastname'=> 'DEPOT',
         'username'=>'admin',
         'email'=>'admin@senter.mx',
+        'company'=>'Test Company',
+        'phone'=>'12345678',
+        'store_url'=>'https://0589f4b953366318ee10464adc336433:0669a1f7f11355b2c7e02ed28ce2fcd5@senter-test.myshopify.com/admin/',
         'password'=>bcrypt('12345678'),
     ]);
 
@@ -35,35 +38,42 @@ class UsersTableSeeder extends Seeder
 
       $user = User::create([
         'name' => 'SOFT',
-        'apellidos'=> 'DEPOT',
+        'lastname'=> 'DEPOT',
         'username'=>'Sales',
-        'email'=>'sales@senter.mx',
+        'email'=>'ejecutivo@senter.mx',
+        'company'=>'Test Company',
+        'phone'=>'12345678',
+        'store_url'=>'https://0589f4b953366318ee10464adc336433:0669a1f7f11355b2c7e02ed28ce2fcd5@senter-test.myshopify.com/admin/',
         'password'=>bcrypt('12345678'),
     ]);
 
-      $user->roles()->attach($sales);
+      $user->roles()->attach($ejecutivo);
       //$user->plazas()->attach($plaza1);
 
 
 
 
 
-      for ($i=1; $i < 3; $i++) {
+      for ($i=1; $i < 50; $i++) {
 
         $faker = Faker\Factory::create();
 
         $user = User::create([
             'name' =>  $faker->firstName,
-            'apellidos'=> $faker->lastName,
+            'lastname'=> $faker->lastName,
             'username'=>$faker->username,
             'email'=>$faker->email,
+            'company'=>'Test Company',
+            'phone'=>'12345678',
+            'store_url'=>'https://0589f4b953366318ee10464adc336433:0669a1f7f11355b2c7e02ed28ce2fcd5@senter-test.myshopify.com/admin/',
+
             'password'=>bcrypt('12345678'),
         //'tipo_usuario'=>1,
                 //'id_estado'=>rand(1, 32),
                 //'id_ciudad'=>rand(1,2492)
         ]);
 
-              $user->roles()->attach($ejecutivo);
+              $user->roles()->attach($cliente);
 
     }
 

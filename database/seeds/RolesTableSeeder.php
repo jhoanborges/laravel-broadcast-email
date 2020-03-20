@@ -27,8 +27,8 @@ class RolesTableSeeder extends Seeder
 
         //TIPO 3 subastas y productos
         $role = new Roles();
-        $role->name = 'sales';
-        $role->description='Sales';
+        $role->name = 'cliente';
+        $role->description='Cliente de la plataforma';
         $role->save();
 
 

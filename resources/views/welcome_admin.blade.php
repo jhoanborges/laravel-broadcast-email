@@ -18,6 +18,7 @@
     {{--<link rel="stylesheet" href="{{asset('css/app.css')}}">--}}
     <link rel="stylesheet" href="{{url('admin_assets/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin_assets/css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('js/jquery-3.4.1.min.js')}}">
 
     @yield('extra-css')
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -58,9 +59,12 @@
         <script src="{{asset('admin_assets/js/buttons.html5.min.js')}}"></script>
         <script src="{{asset('admin_assets/js/buttons.print.min.js')}}"></script>
         <script src="{{asset('admin_assets/js/sweetalert2@9.js')}}"></script>
+        <script src="{{asset('js/bootstrap.js')}}"></script>
+        <script src="{{asset('js//moment.js')}}"></script>
+        <script src="{{asset('js//moment-with-locales.js')}}"></script>
 
         @include('sweetalert::alert')
-        
+
         @yield('extra-js')
     </body>
     </html>

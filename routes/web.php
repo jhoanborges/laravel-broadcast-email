@@ -31,4 +31,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/admin/ordenes', 'OrdersController@index')->name('orders.index');
 
+    Route::get('/admin/clientes/plataforma', 'ClientsController@index')->name('clients.index');
+    Route::post('/clients.get', 'ClientsController@get')->name('clients.get');
+    Route::post('/clients.add', 'ClientsController@store')->name('clients.add');
+    Route::post('/clients.update', 'ClientsController@update')->name('clients.update');
+    Route::post('/clients.delete', 'ClientsController@destroy')->name('clients.delete');
+
+
 });
