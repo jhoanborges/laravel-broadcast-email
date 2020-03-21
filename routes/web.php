@@ -43,7 +43,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/address.update', 'AddressController@update')->name('address.update');
     Route::post('/address.delete', 'AddressController@destroy')->name('address.delete');
 
-
+    //packages
+    Route::get('/admin/packages', 'PackagesController@index')->name('packages.index');
+    Route::post('/packages.get', 'PackagesController@get')->name('packages.get');
+    Route::post('/packages.add', 'PackagesController@store')->name('packages.add');
+    Route::post('/packages.update', 'PackagesController@update')->name('packages.update');
+    Route::post('/packages.delete', 'PackagesController@destroy')->name('packages.delete');
 
 
 });

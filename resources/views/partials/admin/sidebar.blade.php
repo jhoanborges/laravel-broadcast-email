@@ -46,6 +46,13 @@
             </a>
         </li>
 
+        <li class="{{Route::currentRouteNamed('packages.index') ? 'active' : '' }}">
+            <a href="{{route('packages.index')}}">
+                <i class="fas fa-box-open"></i>
+                Paquetes
+            </a>
+        </li>
+
 
 
 {{--}}
@@ -56,7 +63,7 @@
                     <li><a href="{{ route('clients.index') }}">Plataforma</a></li>
                 </ul>
             </li>
---}}
+            --}}
 
         </ul>
 

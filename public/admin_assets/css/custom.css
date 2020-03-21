@@ -42,9 +42,13 @@ nav.side-navbar a[aria-expanded="true"]::before {
     font-weight: 900;
 }
 
-.btn-secondary{
-    color: #fff;
-}
+
 .btn-secondary:hover {
     color: #fff;
+}
+
+.btn-secondary {
+    color:  #fff;
+    background-color: var(--black);
+    border-color: var(--black);
 }
