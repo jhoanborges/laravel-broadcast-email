@@ -4,9 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Notifications\Notifiable;
 
 class Clients extends Model
 {
+    use Notifiable;
     protected $guarded = ['id'];
     protected $fillable = [];
 

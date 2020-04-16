@@ -23,47 +23,12 @@
                 Inicio
             </a>
         </li>
-
-        <li class="{{Route::currentRouteNamed('orders.index') ? 'active' : '' }}">
-            <a href="{{route('orders.index')}}">
-                <i class="fas fa-clipboard-list"></i>
-                Ordenes
-            </a>
-        </li>
-
-        <li class="{{Route::currentRouteNamed('users.index') ? 'active' : '' }}">
-            <a href="{{route('users.index')}}">
+        <li class="{{Route::currentRouteNamed('clients.index') ? 'active' : '' }}">
+            <a href="{{route('clients.index')}}">
                 <i class="fas fa-users"></i>
-                Usuarios
+                Clientes
             </a>
         </li>
-
-
-        <li class="{{Route::currentRouteNamed('address.index') ? 'active' : '' }}">
-            <a href="{{route('address.index')}}">
-                <i class="far fa-address-book"></i>
-                Mis direcciones
-            </a>
-        </li>
-
-        <li class="{{Route::currentRouteNamed('packages.index') ? 'active' : '' }}">
-            <a href="{{route('packages.index')}}">
-                <i class="fas fa-box-open"></i>
-                Paquetes
-            </a>
-        </li>
-
-
-
-{{--}}
-        <li>
-            <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse" >
-                <i class="icon-interface-windows"></i>Clientes</a>
-                <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                    <li><a href="{{ route('clients.index') }}">Plataforma</a></li>
-                </ul>
-            </li>
-            --}}
 
         </ul>
 

@@ -11,7 +11,7 @@ use App\Notifications\UserSuccessfullyRegistered;
 use Notification;
 use Illuminate\Support\Str;
 
-class UsersController extends Controller
+class MarketingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +21,7 @@ class UsersController extends Controller
     public function index()
     {//
 
-        return view('layouts.admin.users')->with([
+        return view('layouts.marketing')->with([
         ]);
     }
 

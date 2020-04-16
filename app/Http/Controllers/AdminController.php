@@ -13,7 +13,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('layouts.admin.home');
+        return view('layouts.home');
     }
 
     /**

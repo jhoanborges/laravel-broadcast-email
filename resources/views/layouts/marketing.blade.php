@@ -1,36 +1,33 @@
-@extends('welcome_admin')
+@extends('welcome')
 @section('content')
 
 <section class="dashboard-counts no-padding-bottom">
     <div class="container-fluid dash-content d-flex">
-        <h1  class="darkblue  mt-1">Usuarios</h1>
-        <button class="btn btn-primary custom-secondary ml-4 pointer"
+        <h1  class="darkblue  mt-1">Marketing</h1>
+        <button class="btn  pmd-btn-raised pmd-ripple-effect btn-primary custom-secondary ml-4 pointer"
         data-toggle="modal" data-target="#addModal"
         >Crear</button>
-
+        <a class="btn pmd-btn-raised pmd-ripple-effect btn-secondary custom-secondary ml-4 pointer"
+        href="{{ route('clients.email') }}"
+        >Enviar correos masivos</a>
     </div>
 </section>
-
-
 
 <section class="tables">
     <div class="container-fluid">
       <div class="row">
-
         <div class="col-lg-12">
           <div class="card">
-
-
               <div class="card-body">
                 <div class="table-responsive">
                     <table id="myTable" class="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Empresa</th>
                                 <th>Nombre</th>
+                                <th>Título</th>
                                 <th>Email</th>
-                                <th>Rol</th>
-                                <th>Teléfono</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -39,24 +36,14 @@
             </div>
         </div>
     </div>
-
-
 </div>
 </div>
 </section>
 
-
-
-
-@include('modals.AddUser')
-@include('modals.EditUser')
-
-
+@include('modals.AddMarketing')
+@include('modals.EditMarketing')
 
 @section('extra-js')
-
-
-
 
 <script>
 
@@ -68,7 +55,7 @@
     });
         var table =   $('#myTable')
         .on('processing.dt', function (e, settings, processing) {
-           if (processing) {
+         if (processing) {
             $('.page').LoadingOverlay("show", {
                 image       : "",
                 fontawesomeColor: "#009FDA",
@@ -103,51 +90,23 @@ buttons: [
 
 
 ajax: {
-    url: '{{route('users.get')}}',
+    url: '{{route('clients.get')}}',
     type: 'POST',
     dataType : 'json',
-  /*
- data: function (d) {
-  d.filter = $('#filter').val();
-},
-*/
 },
 
 "fnDrawCallback": function () {//get total
     $('.total').html(this.fnSettings().fnRecordsTotal())
 },
 
-//select: true,
+select: true,
 
 "columns": [
 {"data": "id"},
-
-{  "render" : function (data, type, row) {
-    return row.name + row.lastname;
-},
-},
-
+{"data": "company"},
+{"data": "name"},
+{"data": "title"},
 {"data": "email"},
-{"data": "role" },
-{"data": "phone" },
-
-/*
-{  "render" : function (data, type, row) {
-
-    if (row.role ==true) {
-        return '<a class="pointer" data-toggle="tooltip" data-placement="right" title="Activo">\
-        <i class="far fa-check-circle fa-2x" style="color: #009FDA;"></i>\
-        </a>';
-    }else{
-      return '<a class="pointer"  data-toggle="tooltip" data-placement="left" title="Inactivo">\
-      <i class="far fa-times-circle fa-2x" style="color: red;"></i>\
-      </a>';
-  }
-},
-},
-*/
-
-
 ],
 
 
@@ -165,15 +124,9 @@ ajax: {
         return ' <a class="pointer mr-2" data-toggle="modal" data-target="#EditModal" \
         data-id="'+row.id+'"\
         data-name="'+row.name+'"\
-        data-lastname="'+row.lastname+'"\
-        data-email="'+row.email+'"\
-        data-username="'+row.username+'"\
-        data-rol="'+row.rol+'"\
-        data-phone="'+row.phone+'"\
         data-company="'+row.company+'"\
-        data-store_url="'+row.store_url+'"\
-        data-commission="'+row.commission+'"\
-        data-status="'+row.status+'"\
+        data-title="'+row.title+'"\
+        data-email="'+row.email+'"\
         >\
         <i class="fas fa-edit fa-2x" style=""></i>\
         </a>\
@@ -214,13 +167,6 @@ ajax: {
 </script>
 
 
-
-
-
-
-
-
-
 <script>
     $('#EditModal').on('show.bs.modal', function (event) {
       var modal = $(this)
@@ -228,31 +174,15 @@ ajax: {
 
       var id = button.data('id')
       var name = button.data('name')
-      var lastname = button.data('lastname')
-      var rol = button.data('rol')
-      var username = button.data('username')
-      var email = button.data('email')
-      var plazas = button.data('plazas')
-      var phone = button.data('phone')
-
       var company = button.data('company')
-      var store_url = button.data('store_url')
-      var commission = button.data('commission')
-      var status = button.data('status')
+      var title = button.data('title')
+      var email = button.data('email')
 
-
-      modal.find('.modal-body .name').val(name)
       modal.find('.modal-body .id').val(id)
-      modal.find('.modal-body .rol').val(rol).change()
-      modal.find('.modal-body .lastname').val(lastname)
-      modal.find('.modal-body .email').val(email)
-      modal.find('.modal-body .username').val(username)
-      modal.find('.modal-body .phone').val(phone)
-
+      modal.find('.modal-body .name').val(name)
       modal.find('.modal-body .company').val(company)
-      modal.find('.modal-body .store_url').val(store_url)
-      modal.find('.modal-body .commission').val(commission)
-      modal.find('.modal-body .status').val(status)
+      modal.find('.modal-body .title').val(title)
+      modal.find('.modal-body .email').val(email)
 
 
 
@@ -260,73 +190,64 @@ ajax: {
 </script>
 
 
-
-
 <script>
     function deleteNoty(id){
-       Swal.fire({
-          title: '¿Está seguro de eliminar este registro?',
-          text: "No serás capaz de recuperarlo nuevamente",
-          type: 'warning',
-          showCancelButton: true,
-          cancelButtonText: 'Cancelar',
-          confirmButtonText: 'Borrar'
-      }).then((result) => {
-          if (result.value) {
+     Swal.fire({
+      title: '¿Está seguro de eliminar este registro?',
+      text: "No serás capaz de recuperarlo nuevamente",
+      type: 'warning',
+      showCancelButton: true,
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Borrar'
+  }).then((result) => {
+      if (result.value) {
 
-            var table = $('#myTable');
-            var page = $('.page');
+        var table = $('#myTable');
+        var page = $('.page');
 
-            var data = new FormData();
-            data.append('id', id);
+        var data = new FormData();
+        data.append('id', id);
 
-            $.ajax({
-                url: "{{ route('users.delete') }}",
-                data: data,
-                enctype: 'multipart/form-data',
-                processData: false,
-                contentType: false,
-                type: 'POST',
+        $.ajax({
+            url: "{{ route('clients.delete') }}",
+            data: data,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            type: 'POST',
 
-                beforeSend: function () {
-                    page.LoadingOverlay("show", {
-                        image       : "",
-                        fontawesomeColor: "#009FDA",
-                        fontawesome : "fas fa-spinner fa-spin",
-                        progress    : true
-                    });
-                },
+            beforeSend: function () {
+                page.LoadingOverlay("show", {
+                    image       : "",
+                    fontawesomeColor: "#009FDA",
+                    fontawesome : "fas fa-spinner fa-spin",
+                    progress    : true
+                });
+            },
 
-                success: function(response) {
-                    table.DataTable().ajax.reload( null, false);
-                    page.LoadingOverlay("hide")
-                    toastr["success"](response.message)
+            success: function(response) {
+                table.DataTable().ajax.reload( null, false);
+                page.LoadingOverlay("hide")
+                toastr["success"](response.message)
 
+            },
 
+            error:function (xhr, ajaxOptions, thrownError){
+                page.LoadingOverlay("hide")
 
-                },
+                switch (xhr.status) {
+                    case 404:
+                    toastr["error"](JSON.parse(xhr.responseText).message)
 
-
-                error:function (xhr, ajaxOptions, thrownError){
-                    page.LoadingOverlay("hide")
-
-                    switch (xhr.status) {
-                        case 404:
-                        toastr["error"](JSON.parse(xhr.responseText).message)
-
-                        return false;
-                    }
-
-                    toastr["error"](response.message)
-
-
-
+                    return false;
                 }
-            });
+                toastr["error"](response.message)
+            }
+        });
 
-        }
-    })
-  }
+    }
+})
+}
 
 </script>
 
@@ -344,14 +265,11 @@ ajax: {
                 $(this).remove()
             })
         }
-
         $("#form").on("submit", function(e){
 
             var form = $(this)
             var table = $('#myTable');
             var page = $('.page');
-
-
 
             var array = $(this).serializeArray();
             dataObj = {};
@@ -360,30 +278,11 @@ ajax: {
               dataObj[field.name] = field.value;
           });
 
-
-
             data = new FormData();
-            data.append('name', dataObj['name']);
-            data.append('lastname', dataObj['lastname']);
-            data.append('email', dataObj['email']);
-            data.append('username', dataObj['username']);
-            data.append('password', dataObj['password']);
-            data.append('password_confirmation', dataObj['password_confirmation']);
-            data.append('rol', dataObj['rol']);
-            data.append('phone', dataObj['phone']);
-
             data.append('company', dataObj['company']);
-            data.append('status', dataObj['status']);
-            data.append('store_url', dataObj['store_url']);
-            data.append('commission', dataObj['commission']);
-
-
-
-            var select =  $('.select').val()
-            if (select) {
-                data.append('plaza', select);
-            }
-
+            data.append('name', dataObj['name']);
+            data.append('title', dataObj['title']);
+            data.append('email', dataObj['email']);
 
             e.preventDefault();
 
@@ -394,7 +293,7 @@ ajax: {
         });
 
             $.ajax({
-                url: '{{route('users.add')}}',
+                url: '{{route('clients.add')}}',
                 data: data,
                 enctype: 'multipart/form-data',
                 processData: false,
@@ -465,8 +364,6 @@ ajax: {
 })//add modal
 
 
-
-
         $("#formEdit").on("submit", function(e){
 
             var form = $(this)
@@ -480,37 +377,12 @@ ajax: {
               dataObj[field.name] = field.value;
           });
 
-
-
             data = new FormData();
             data.append('id', dataObj['id']);
-            data.append('name', dataObj['name']);
-            data.append('lastname', dataObj['lastname']);
-            data.append('email', dataObj['email']);
-            data.append('username', dataObj['username']);
-            data.append('phone', dataObj['phone']);
-            if(dataObj['password'].length){
-                data.append('password', dataObj['password']);
-
-            }
-
-            if(dataObj['password_confirmation'].length){
-                data.append('password_confirmation', dataObj['password_confirmation']);
-            }
-
-            data.append('rol', dataObj['rol']);
-
-            var select =  $('#select2').val()
-            if (select) {
-                data.append('plaza', select);
-            }
-
             data.append('company', dataObj['company']);
-            data.append('status', dataObj['status']);
-            data.append('store_url', dataObj['store_url']);
-            data.append('commission', dataObj['commission']);
-
-
+            data.append('name', dataObj['name']);
+            data.append('title', dataObj['title']);
+            data.append('email', dataObj['email']);
 
             e.preventDefault();
 
@@ -521,7 +393,7 @@ ajax: {
         });
 
             $.ajax({
-                url: '{{route('users.update')}}',
+                url: '{{route('clients.update')}}',
                 data: data,
                 enctype: 'multipart/form-data',
                 processData: false,
@@ -597,20 +469,10 @@ ajax: {
                         toastr["error"](response.message)
                     }
 
-
-
                 }
             });
 
     })//edit modal
-
-
-
-
-
-
-
-
 
         $('#EditModal').on('hidden.bs.modal', function (event) {
             var form =  $("#formEdit")
@@ -621,55 +483,9 @@ ajax: {
             document.getElementById('formEdit').reset();
         })
 
-        $('#rol').on('change', function() {
-    if (this.value == 1) {//si es admin tiene todas las plazas por defecto
-        $(".select").prop("disabled", true);
-        $('.select').prop('required',false);
-
-    }else{
-        $(".select").prop("disabled", false);
-        $('.select').prop('required',true);
-
-    }
-});
-
-
-        $('.rol').on('change', function() {
-    if (this.value == 1) {//si es admin tiene todas las plazas por defecto
-        $(".select2").prop("disabled", true);
-        $('.select2').prop('required',false);
-    }else{
-        $(".select2").prop("disabled", false);
-        $('.select2').prop('required',true);
-
-
-    }
-});
-
-
-
-
-
-        $('.select2').select2({
-            width: '100%',
-            placeholder:'Selecciona una opción',
-            dropdownParent:$('#EditModal')
-        });
-
-        $('.select').select2({
-            width: '100%',
-            placeholder:'Selecciona una opción',
-            dropdownParent:$('#addModal')
-        });
-
-
-
-
 
     })
 </script>
-
-
 
 
 @endsection

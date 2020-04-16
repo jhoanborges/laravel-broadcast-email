@@ -1,6 +1,6 @@
       <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-          <a class="navbar-brand" href="{{ route('home') }}">
+          <a class="navbar-brand" href="{{ route('admin.index') }}">
             <img src="{{ asset('img/logo-white-full.png') }}" class="img-fluid navbar-img" width="100">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +9,7 @@
 
           <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item active"><a href="{{ route('home') }}" class="nav-link">Home</a></li>
+              <li class="nav-item active"><a href="{{ route('admin.index') }}" class="nav-link">Home</a></li>
               <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
               <li class="nav-item"><a href="domain.html" class="nav-link">Domain</a></li>
               <li class="nav-item"><a class="nav-link" href="hosting.html">Hosting</a></li>
